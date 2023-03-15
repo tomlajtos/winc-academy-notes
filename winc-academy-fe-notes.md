@@ -465,9 +465,9 @@ FORMAT EXAMPLE:
 
 #### 10.04. Common Async Patterns
 ##### Pitfall of async code in JS:
-    - `await` blocks the code until it is resolved so awaiting at the top level of our code is not a good idea, it is better to await things when it is actually needed
-    - anything that depends on the result of await should be handled inside the async function itself. (with multiple, interdependent functions this can get complicated quickly -> everything is async)
-
+  - `await` blocks the code until it is resolved so awaiting at the top level of our code is not a good idea, it is better to await things when it is actually needed
+  - anything that depends on the result of await should be handled inside the async function itself. (with multiple, interdependent functions this can get complicated quickly -> everything is async)
+  
 ##### Avoid having async functions everywhere:
   __Inversion of control__:
   instead of caller function we let the async function handle the result from the asynchronous code. i.e.:
@@ -716,4 +716,23 @@ can be done based on <u>types</u>, features, pages, etc.
   - `pages` folder for page files, can add sub-folders for pages storing the page components, 1xuse comps
 
 <img src="./winc-fe-notes-figures/react-project-str.jpg" title="React project file structure" alt="Basic React project structure" width="50%" height="50%"/>
- 
+
+#### Importing and Exporting files
+[MDN documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
+
+Ways to use import in React:
+1. import a default export
+```
+export default App;
+//////////////////////////////
+import App from "./App";
+```
+2. when export is not a default exp. << __RECOMMENDED__
+```
+export const App = () => {...}
+//////////////////////////////
+import {App} from "./App"
+```
+To import multiple modules:
+`import React, {useState} from 'react';`
+
