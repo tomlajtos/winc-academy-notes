@@ -649,3 +649,56 @@ They can be created in multiple ways:
 
 #### Exercise: API response rendering
 
+## Ract basics - FE module 11
+[documentation](https://devdocs.io/react/)
+### Introduction 
+#### Benefits:
+	- less code m ore functionality compared to JS only approach
+	- rel. easy: combines JS and HTML concepts
+	- reusable: uses components as main building blocks for applications
+	- performance: uses virtual DOM, compares changes in the app and updates those changes in the real DOM (instead of updating all components)
+	- possibility of creating both web and mobile (React native framework) apps
+	- good debugging tools (React Dev Tools in Chrome)
+
+  NOTE: it ships a lot of JS so loading time could be slow
+  SOLUTION: code splitting > only code that is needed will load sever side rendering > sends a fully rendered page as a static HTML markup
+
+#### Features:
+React adds a layer of abstraction over using JS directly on the DOM
+  - Components:
+  UI components are the building blocks of a bigger UI >> easy debug, re-use of component in multi page apps
+  
+  - Props:
+  using properties we can pass functions and data to other components >> dinamic/interacting components
+  
+  - State:
+  keep track of values by storing them in a "state" object
+  
+  - JSX:
+  components use JSX (JS XML) which is an extension to JS - combines parts of HTML and JS
+  
+  - Virtual DOM:
+  higher version of DOM - it can be uploaded independently of the real DOM
+  it is not able to make changes on the screen (it has all the props as the real DOM however)
+  
+  if change in React -> new version of V-DOM -> periodically compared to the real DOM and updates whenever 
+  there is a diff === RECONCILIATION
+
+#### Other frameworks:
+	- Angular (old but receiving major improvements lately
+	- Vue
+	- Backbone
+	- Ember 
+  etc.
+
+#### Drawbacks in React:
+	- documentation is less beginner friendly and not very structured
+	- requires a lot of planning (because of its flexibility)
+	- state management is not perfect
+
+[Angular](https://www.ava.codes/posts/react-alternatives#toc-angular-a-stable-framework-based-on-typescript)
+[Vue](https://www.ava.codes/posts/react-alternatives#toc-vue-js-a-framework-for-fast-ui-building)
+
+### 01. Setup
+#### Steps
+1, 
