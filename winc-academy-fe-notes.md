@@ -677,44 +677,44 @@ React adds a layer of abstraction over using JS directly on the DOM
   there is a diff === RECONCILIATION
 
 #### Other frameworks:
-	- Angular (old but receiving major improvements lately
-	- Vue
-	- Backbone
-	- Ember 
+  - Angular (old but receiving major improvements lately
+  - Vue
+  - Backbone
+  - Ember 
   etc.
 
 #### Drawbacks in React:
-	- documentation is less beginner friendly and not very structured
-	- requires a lot of planning (because of its flexibility)
-	- state management is not perfect
+ - documentation is less beginner friendly and not very structured
+ - requires a lot of planning (because of its flexibility)
+ - state management is not perfect
 
 [Angular](https://www.ava.codes/posts/react-alternatives#toc-angular-a-stable-framework-based-on-typescript)
 [Vue](https://www.ava.codes/posts/react-alternatives#toc-vue-js-a-framework-for-fast-ui-building)
 
 ### 01. Setup
 #### Steps
-	1. `pnpm create vite@latest my-first-app --template react`
-	2. `cd my-first-app` >> `npm install` => installs dependencies
-	3. edit Vite config 
-	4. `pnpm rund dev` => runs the app via __Vite__-server
-	5. `pnpm eslint --init` => set up Eslint
-	6. edit `eslintrc` >> 
-
-	```
-	"rules": {
-		"react/prop-types":0
-	}
-	```
-
-	7. `src/App.js` is the file that's running a code at --localhost 
+  1. `pnpm create vite@latest my-first-app --template react`
+  2. `cd my-first-app` >> `npm install` => installs dependencies
+  3. edit Vite config 
+  4. `pnpm rund dev` => runs the app via __Vite__-server
+  5. `pnpm eslint --init` => set up Eslint
+  6. edit `eslintrc` >> 
+  
+  ```
+  "rules": {
+  	"react/prop-types":0
+  }
+  ```
+  
+  7. `src/App.js` is the file that's running a code at --localhost 
 
 #### Files and Directories, Organize a project:
 can be done based on <u>types</u>, features, pages, etc.
 
-	- create a `components` folder inside `src` (for reusable comps) 
-	/some comps have child-parent realationship - these can be grouped in a folder inside `components`)
-	- all generic UI comps will be grouped in a `ui` folder
-	- `pages` folder for page files, can add sub-folders for pages storing the page components, 1xuse comps
+  - create a `components` folder inside `src` (for reusable comps) 
+    /some comps have child-parent realationship - these can be grouped in a folder inside `components`
+  - all generic UI comps will be grouped in a `ui` folder
+  - `pages` folder for page files, can add sub-folders for pages storing the page components, 1xuse comps
 
 <img src="./winc-fe-notes-figures/react-project-str.jpg" title="React project file structure" alt="Basic React project structure" width="50%" height="50%"/>
  
