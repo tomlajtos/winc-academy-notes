@@ -614,6 +614,7 @@ They can be created in multiple ways:
   [MDN - event loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
 
 ### 13. Render API response in DOM
+  ![figure application (fe <-> be)](./winc-fe-notes-figures/application.png)
   ? DETOUR ? - where to start or continue writing code in a project (i.e. web app)
 
   |       |            ||  |User    |--(action+data)->|Application|--(action+data)-->|    |  ||
