@@ -699,11 +699,13 @@ React adds a layer of abstraction over using JS directly on the DOM
 	4. `pnpm rund dev` => runs the app via __Vite__-server
 	5. `pnpm eslint --init` => set up Eslint
 	6. edit `eslintrc` >> 
+
 	```
 	"rules": {
 		"react/prop-types":0
 	}
 	```
+
 	7. `src/App.js` is the file that's running a code at --localhost 
 
 #### Files and Directories, Organize a project:
@@ -714,5 +716,5 @@ can be done based on <u>types</u>, features, pages, etc.
 	- all generic UI comps will be grouped in a `ui` folder
 	- `pages` folder for page files, can add sub-folders for pages storing the page components, 1xuse comps
 
-	![React project file structure}(./winc-fe-notes-figures/react-project-str.jpg "Basic React project structure")
+	![React project file structure](./winc-fe-notes-figures/react-project-str.jpg "Basic React project structure")
  
