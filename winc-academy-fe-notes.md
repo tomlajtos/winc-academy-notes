@@ -615,16 +615,7 @@ They can be created in multiple ways:
 
 ### 13. Render API response in DOM
   ![figure application (fe <-> be)](./winc-fe-notes-figures/application.png)
-  ? DETOUR ? - where to start or continue writing code in a project (i.e. web app)
-
-  |       |            ||  |User    |--(action+data)->|Application|--(action+data)-->|    |  ||
-  |browser|--(events)--||->|Interact|                 |   logic   |                  |    |--||->( changes )-->|       |
-  | with  |            ||                             |   a.k.a.  |                  | IO |  ||                |backend|
-  |  DOM  |  (dom    ) ||                             | business  |                  |    |<-||--(Curr data)---|       |
-  |       |<-(changes)-||--|   UI   |<-(    data   )--|  rules    |<--(    data   )--|    |  ||
-
-  // || application ||
-
+  
   __good place to start where the least connections & interdependencies are between the diff parts__
   - not a lot of other code is needed for this part and testing is easier too
   - from the diagram these are: IO for sending or retrievieng, UI part where we render HTML based on data
