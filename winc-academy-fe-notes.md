@@ -716,5 +716,5 @@ can be done based on <u>types</u>, features, pages, etc.
 	- all generic UI comps will be grouped in a `ui` folder
 	- `pages` folder for page files, can add sub-folders for pages storing the page components, 1xuse comps
 
-![React project file structure](./winc-fe-notes-figures/react-project-str.jpg "Basic React project structure")
+<img src="./winc-fe-notes-figures/react-project-str.jpg" title="React project file structure" alt="Basic React project structure" width="50%" height="50%"/>
  
