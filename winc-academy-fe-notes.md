@@ -465,11 +465,11 @@ FORMAT EXAMPLE:
   ```
 
 #### 10.04. Common Async Patterns
-  ##### Pitfall of async code in JS:
+##### Pitfall of async code in JS:
     - `await` blocks the code until it is resolved so awaiting at the top level of our code is not a good idea, it is better to await things when it is actually needed
     - anything that depends on the result of await should be handled inside the async function itself. (with multiple, interdependent functions this can get complicated quickly -> everything is async)
 
-  ##### Avoid having async functions everywhere:
+##### Avoid having async functions everywhere:
   __Inversion of control__:
   instead of caller function we let the async function handle the result from the asynchronous code. i.e.:
 	```
@@ -487,7 +487,7 @@ FORMAT EXAMPLE:
   All the awaiting happens inside the async function which is not awaited itself -> as soon it hits an await the the control flow is handeled back to wherever the
   async function was called -> rest of the code continues to execute (concept - EVENT LOOP)
 
-  ##### Successive async function calls (async code depends on other async code)
+##### Successive async function calls (async code depends on other async code)
   i.e.: make request based on prev requested data
     ```
     async function handlePosts() {
@@ -497,7 +497,7 @@ FORMAT EXAMPLE:
     }
     ```
 
-  ##### Multiple independent async code -> paralel requests >> do not await them in succession
+##### Multiple independent async code -> paralel requests >> do not await them in succession
   i.e.:
     ```
     async function handlePosts() {
@@ -515,32 +515,32 @@ FORMAT EXAMPLE:
   We do not have to immediately await an async function in order to get the data out of it.
   We can keep a reference to the Promise and await it later on
 
-  ##### Different requests can take different time (some times big diff)
-    - each requests should be handled as the result comes in
-    - wrap them individually an async function
-    - call them independently and handle them in the order they come in
+##### Different requests can take different time (some times big diff)
+  - each requests should be handled as the result comes in
+  - wrap them individually an async function
+  - call them independently and handle them in the order they come in
 
-    ```
-    async function handleRequests() {
-      async function hadleFriends() {
-        const friends = await fetchFriends();
-        showFriends(friends);
-      }
-
-      async function handlePosts() {
-        const posts = await fetchPosts();
-        showPosts(posts);
-      }
-
-      await Promise.all([ // takes an array of promisses and resolvs when all of them are resolved
-        handlePosts(),    // returns a single promise, aggregating the results of multiple promisses -> used with relaterd promisses
-        handleFriends(),
-      ]);
+  ```
+  async function handleRequests() {
+    async function hadleFriends() {
+  	const friends = await fetchFriends();
+  	showFriends(friends);
     }
-    ```
+  
+    async function handlePosts() {
+  	const posts = await fetchPosts();
+  	showPosts(posts);
+    }
+  
+    await Promise.all([ // takes an array of promisses and resolvs when all of them are resolved
+  	handlePosts(),    // returns a single promise, aggregating the results of multiple promisses -> used with relaterd promisses
+  	handleFriends(),
+    ]);
+  }
+  ```
   [more about Promise.all](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)
 
-  ##### Top level await
+##### Top level await
   It is possible to awati at the top level of a JS module, __HOWEVER__:
   - a module with top level await will be awaited by other modules when they import it so it sort of blocks the execution (other imported synchronous modules will run tho)
   __!!!Only use top level await in modules that are strictly used for fetching some data and exporting it, and never place synchronous code after your asynchronous code when
