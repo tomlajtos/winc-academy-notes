@@ -645,12 +645,12 @@ They can be created in multiple ways:
 [documentation](https://devdocs.io/react/)
 ### Introduction 
 #### Benefits:
-	- less code m ore functionality compared to JS only approach
-	- rel. easy: combines JS and HTML concepts
-	- reusable: uses components as main building blocks for applications
-	- performance: uses virtual DOM, compares changes in the app and updates those changes in the real DOM (instead of updating all components)
-	- possibility of creating both web and mobile (React native framework) apps
-	- good debugging tools (React Dev Tools in Chrome)
+  - less code more functionality compared to JS only approach
+  - rel. easy: combines JS and HTML concepts
+  - reusable: uses components as main building blocks for applications
+  - performance: uses virtual DOM, compares changes in the app and updates those changes in the real DOM (instead of updating all components)
+  - possibility of creating both web and mobile (React native framework) apps
+  - good debugging tools (React Dev Tools in Chrome)
 
   NOTE: it ships a lot of JS so loading time could be slow
   SOLUTION: code splitting > only code that is needed will load sever side rendering > sends a fully rendered page as a static HTML markup
