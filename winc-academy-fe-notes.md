@@ -182,7 +182,7 @@
 
 ## Talking to the  Backend  (API & basic backend) -- FE Module 10
 ### 01/02. Internet protocols: HTTP (HyperText Transort Protocol)
-    [Internet Protocol Wikipedia](https://en.wikipedia.org/wiki/Internet_protocol_suite)
+  [Internet Protocol Wikipedia](https://en.wikipedia.org/wiki/Internet_protocol_suite)
 
 ### 03. Request/Response
 between client and server
@@ -190,8 +190,7 @@ type of HTTP requests we can send to a server:
 - Get information from the server
 -  Send new data to the server.
 - Update existing data on the server.
-- Delete data from the server.
-==> CRUD (Create, Read, Update, Delete)
+- Delete data from the server. ==> CRUD (Create, Read, Update, Delete)
 
 ### 04. URL
 Parts of a URL (required and optional):
@@ -204,7 +203,7 @@ Parts of a URL (required and optional):
     - .com > top-level domain
 - Path: after the host/port or domain combination
   can be 0 or more segments:
-    www.google.../search/howsearchworks (2 segments)
+  "www.google.../search/howsearchworks (2 segments)"
 - User info: rare, i.e. "userName:secret"
 - Port: usually only in local hosting, but the default for web is port 80
 - Query: part after the '?', one or more key/value pairs separated by '&'
