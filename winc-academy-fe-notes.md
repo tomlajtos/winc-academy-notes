@@ -448,8 +448,7 @@ FORMAT EXAMPLE:
 
   for server requestsi, the fetch method has to be wrapped in an async function,
   and the response has to be awaited.
-  each async function has to be awaited:
-
+  each async function has to be awaited:   
   ```
   async function fetchData() {
     try {
@@ -470,13 +469,13 @@ FORMAT EXAMPLE:
   
 ##### Avoid having async functions everywhere:
   __Inversion of control__:
-  instead of caller function we let the async function handle the result from the asynchronous code. i.e.:
-	```
-		async function handleData() {
-			const data = await fetchData();
-			showData(data); // synchronous function, async spreading is stopped
-		}
-	```
+  instead of caller function we let the async function handle the result from the asynchronous code. i.e.:  
+  ```
+	async function handleData() {
+		const data = await fetchData();
+		showData(data); // synchronous function, async spreading is stopped
+	}
+  ```
   It is important to contain async code!
 
   The sync and async code should be separated as much as possible. The rest of the code
