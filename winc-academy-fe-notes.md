@@ -687,7 +687,7 @@ React adds a layer of abstraction over using JS directly on the DOM
  - requires a lot of planning (because of its flexibility)
  - state management is not perfect
 
-[Angular](https://www.ava.codes/posts/react-alternatives#toc-angular-a-stable-framework-based-on-typescript)
+[Angular](https://www.ava.codes/posts/react-alternatives#toc-angular-a-stable-framework-based-on-typescript)   
 [Vue](https://www.ava.codes/posts/react-alternatives#toc-vue-js-a-framework-for-fast-ui-building)
 
 ### 01. Setup
@@ -736,3 +736,4 @@ import {App} from "./App"
 To import multiple modules:
 `import React, {useState} from 'react';`
 
+### 02. JSX
