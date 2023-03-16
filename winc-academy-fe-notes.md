@@ -735,4 +735,27 @@ import {App} from "./App"
 To import multiple modules:
 `import React, {useState} from 'react';`
 
-### 02. JSX
+### 02. JSX (JavaScript XML)
+It is a combination of JS and HTML
+Allows for an easier DOM manipulation, but with an extra layer of abstraction,    
+it is transformed into JS and HTML which the browser can understand    
+Example code of a simple component:   
+```
+import './App.css';
+
+function App() {
+	const greeting = "Hi, this is an app made with React"; // variables defined outside the `return()`
+	const description = <p>I think it holds an interestig future</p>;
+	return (
+		<div className="App">
+			<h1> Welcome! </h1>
+			<p>{greeting}</p> // variable is a string which will be the content within the `<p>` tags
+			{description} // tags saved in the variable, injecting the variable here without any tags
+		</div>
+	);
+}
+
+export default App;
+```
+
+JSX code goes inside `return ()`
