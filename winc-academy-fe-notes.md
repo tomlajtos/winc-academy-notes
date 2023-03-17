@@ -1,16 +1,25 @@
 # FRONT-END DEVELOPMENT
-##### Table of Contents (FE Modules)
-[m1](#m1-|-fe-module-1)   
-[Professional Coding Setup](#professional-coding-setup-|-fe-module-8)
-
+##### Table of Contents (FE Modules)   
+[01. HTML Basics](https://github.com/tomlajtos/winc-fe-notes/blob/main/winc-academy-fe-notes.md#m1--fe-module-1)      
+[02. CSS Basics](https://github.com/tomlajtos/winc-fe-notes/blob/main/winc-academy-fe-notes.md#m1--fe-module-1)      
+[03. JavaScript Basics](https://github.com/tomlajtos/winc-fe-notes/blob/main/winc-academy-fe-notes.md#m1--fe-module-1)      
+[04. CSS Advanced](https://github.com/tomlajtos/winc-fe-notes/blob/main/winc-academy-fe-notes.md#m1--fe-module-1)      
+[05. Design and Accessibility]()   
+[06. JavaScript Functions]()   
+[07. JavaScript Advanced]()   
+[08. Professional Coding Setup](https://github.com/tomlajtos/winc-fe-notes/blob/main/winc-academy-fe-notes.md#professional-coding-setup--fe-module-8)   
+[09. JavaScript in The Browser]()   
+[10. Talking to The Backend]()   
+[11. React Basics]()   
+[12. React Advanced]()   
 ---
-## M1 | FE Module 1
-## -- FE Module 2
-## -- FE Module 3
-## -- FE Module 4
-## -- FE Module 5
-## -- FE Module 6
-## -- FE Module 7
+## HTML Basics | FE Module 1
+## CSS Basics | FE Module 2
+## JavaScript Basics | FE Module 3
+## CSS Advanced | FE Module 4
+## Design and Accessibility | FE Module 5
+## JavaScript Functions | FE Module 6
+## JavaScript Advanced | FE Module 7
 ## Professional coding setup | FE Module 8
 ### 01. CLI (command line interface)
 - ? > where am I - `pwd` (print working directory)
@@ -23,13 +32,10 @@
 - ? >
 - ? >
 
-### 02.
-
-### 03.
-
-### 04.
-
-### 05.
+### 02. -
+### 03. -
+### 04. -
+### 05. -
 
 ### 06. Node/npm
   - install node/npm or NVM
@@ -189,9 +195,9 @@
 
 ### 12. Git on the computer / local repo
 
-## JavaScript in The Browser -- FE Module 9
+## JavaScript in The Browser | FE Module 9
 
-## Talking to the  Backend  (API & basic backend) -- FE Module 10
+## Talking to The  Backend  (API & basic backend) | FE Module 10
 ### 01/02. Internet protocols: HTTP (HyperText Transort Protocol)
   [Internet Protocol Wikipedia](https://en.wikipedia.org/wiki/Internet_protocol_suite)
 
@@ -648,7 +654,7 @@ They can be created in multiple ways:
 
 #### Exercise: API response rendering
 
-## Ract basics - FE module 11
+## Ract Basics | FE module 11
 [documentation](https://devdocs.io/react/)
 ### Introduction 
 #### Benefits:
