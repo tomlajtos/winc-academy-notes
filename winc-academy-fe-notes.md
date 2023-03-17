@@ -1,16 +1,16 @@
 # FRONT-END DEVELOPMENT
 ##### Table of Contents (FE Modules)   
-1. [HTML Basics](https://github.com/tomlajtos/winc-fe-notes/blob/main/winc-academy-fe-notes.md#html-basics--fe-module-1)      
-2. [CSS Basics](https://github.com/tomlajtos/winc-fe-notes/blob/main/winc-academy-fe-notes.md#css-basics--fe-module-2)      
-3. [JavaScript Basics](https://github.com/tomlajtos/winc-fe-notes/blob/main/winc-academy-fe-notes.md#javascript-basics--fe-module-3)      
-4. [CSS Advanced](https://github.com/tomlajtos/winc-fe-notes/blob/main/winc-academy-fe-notes.md#css-advanced--fe-module-4)      
-5. [Design and Accessibility](https://github.com/tomlajtos/winc-fe-notes/blob/main/winc-academy-fe-notes.md#design-and-accessibility--fe-module-5)   
-6. [JavaScript Functions](https://github.com/tomlajtos/winc-fe-notes/blob/main/winc-academy-fe-notes.md#javascript-functions--fe-module-6)   
-7. [JavaScript Advanced](https://github.com/tomlajtos/winc-fe-notes/blob/main/winc-academy-fe-notes.md#javascript-advanced--fe-module-7)   
-8. [Professional Coding Setup](https://github.com/tomlajtos/winc-fe-notes/blob/main/winc-academy-fe-notes.md#professional-coding-setup--fe-module-8)   
-9. [JavaScript in The Browser](https://github.com/tomlajtos/winc-fe-notes/blob/main/winc-academy-fe-notes.md#javascript-in-the-browser--fe-module-9)   
-10. [Talking to The Backend](https://github.com/tomlajtos/winc-fe-notes/blob/main/winc-academy-fe-notes.md#talking-to-the--backend--api--basic-backend--fe-module-10)   
-11. [React Basics](https://github.com/tomlajtos/winc-fe-notes/blob/main/winc-academy-fe-notes.md#ract-basics--fe-module-11)   
+1. [HTML Basics](https://github.com/tomlajtos/winc-academy-notes/blob/main/winc-academy-fe-notes.md#html-basics--fe-module-1)      
+2. [CSS Basics](https://github.com/tomlajtos/winc-academy-notes/blob/main/winc-academy-fe-notes.md#css-basics--fe-module-2)      
+3. [JavaScript Basics](https://github.com/tomlajtos/winc-academy-notes/blob/main/winc-academy-fe-notes.md#javascript-basics--fe-module-3)      
+4. [CSS Advanced](https://github.com/tomlajtos/winc-academy-notes/blob/main/winc-academy-fe-notes.md#css-advanced--fe-module-4)      
+5. [Design and Accessibility](https://github.com/tomlajtos/winc-academy-notes/blob/main/winc-academy-fe-notes.md#design-and-accessibility--fe-module-5)   
+6. [JavaScript Functions](https://github.com/tomlajtos/winc-academy-notes/blob/main/winc-academy-fe-notes.md#javascript-functions--fe-module-6)   
+7. [JavaScript Advanced](https://github.com/tomlajtos/winc-academy-notes/blob/main/winc-academy-fe-notes.md#javascript-advanced--fe-module-7)   
+8. [Professional Coding Setup](https://github.com/tomlajtos/winc-academy-notes/blob/main/winc-academy-fe-notes.md#professional-coding-setup--fe-module-8)   
+9. [JavaScript in The Browser](https://github.com/tomlajtos/winc-academy-notes/blob/main/winc-academy-fe-notes.md#javascript-in-the-browser--fe-module-9)   
+10. [Talking to The Backend](https://github.com/tomlajtos/winc-academy-notes/blob/main/winc-academy-fe-notes.md#talking-to-the--backend--api--basic-backend--fe-module-10)   
+11. [React Basics](https://github.com/tomlajtos/winc-academy-notes/blob/main/winc-academy-fe-notes.md#ract-basics--fe-module-11)   
 12. [React Advanced](#)   
 ---
 ## HTML Basics | FE Module 1
@@ -627,7 +627,7 @@ They can be created in multiple ways:
   [MDN - event loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)   
 
 ### 13. Render API response in DOM
-  ![figure application (fe &harr; be)](./winc-fe-notes-figures/application.png)   
+  ![figure application (fe &harr; be)](./winc-academy-notes-figures/application.png)   
   
   __good place to start where the least connections & interdependencies are between the diff parts__   
   - not a lot of other code is needed for this part and testing is easier too
@@ -729,7 +729,7 @@ can be done based on <u>types</u>, features, pages, etc.
   - all generic UI comps will be grouped in a `ui` folder
   - `pages` folder for page files, can add sub-folders for pages storing the page components, 1xuse comps
 
-<img src="./winc-fe-notes-figures/react-project-str.jpg" title="React project file structure" alt="Basic React project structure" width="50%" height="50%"/>
+<img src="./winc-academy-notes-figures/react-project-str.jpg" title="React project file structure" alt="Basic React project structure" width="50%" height="50%"/>
 
 #### Importing and Exporting files
 [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)   
