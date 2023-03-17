@@ -627,7 +627,7 @@ They can be created in multiple ways:
   [MDN - event loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)   
 
 ### 13. Render API response in DOM
-  ![figure application (fe &harr; be)](./winc-academy-notes-figures/application.png)   
+![figure application (fe &harr; be)](./winc-fe-notes-figures/application.png)   
   
   __good place to start where the least connections & interdependencies are between the diff parts__   
   - not a lot of other code is needed for this part and testing is easier too
@@ -655,7 +655,7 @@ They can be created in multiple ways:
 #### Exercise: API response rendering
 
 ## Ract Basics | FE module 11
-[documentation](https://devdocs.io/react/)
+[documentation](https://react.dev/)
 ### Introduction 
 #### Benefits:
   - less code more functionality compared to JS only approach
