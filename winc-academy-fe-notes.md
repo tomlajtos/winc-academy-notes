@@ -1,9 +1,10 @@
 # FRONT-END DEVELOPMENT
 ##### Table of Contents (FE Modules)
-[m1](## -- FE Module 1)
+[m1](#m1-|-fe-module-1)
+[Professional Coding Setup](#professional-coding-setup-|-fe-module-8)
 
 ---
-## -- FE Module 1
+## M1 | FE Module 1
 ## -- FE Module 2
 ## -- FE Module 3
 ## -- FE Module 4
