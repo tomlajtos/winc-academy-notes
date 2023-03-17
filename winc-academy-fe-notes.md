@@ -27,10 +27,10 @@
 ### 07. Installing global npm packages
   - ? > `npm install -g package_name`
   - ? > run a package without installing it ==> use 'npx' i.e.: `npx package_name`
-      (download -> run -> remove)
+      (download &larr; run &larr; remove)
 ### 08. JavaScript projects
 #### 08.01. Initialize a project with npm
-  - in project root -> `npm init` -> answer qs --> creates package.json (editable)
+  - in project root &larr; `npm init` &larr; answer qs &larr; creates package.json (editable)
 
 #### 08.02. Add script for nodemon
   ```javascript
@@ -76,11 +76,11 @@
 
 ##### 08.04.02. npm version calculator // [link](https://semver.npmjs.com/)
   Query examples:
-  - '^2.1.3' --> any version with the same main version (1st no.) and minor and patch versions are equal or higher
-  - '~3.9.1' --> any verion within 3.9... patch number is equal or higher
-  - '>=4.1.0' --> any version that are equal or higher incl. major/minor/patch
+  - '^2.1.3' &larr; any version with the same main version (1st no.) and minor and patch versions are equal or higher
+  - '~3.9.1' &larr; any verion within 3.9... patch number is equal or higher
+  - '>=4.1.0' &larr; any version that are equal or higher incl. major/minor/patch
   - also based on the logic the following operators can be used too: >, <, <=
-  - 1.0.0 - 3.0.0 --> exact range, icluding the lover and upper limits
+  - 1.0.0 - 3.0.0 &larr; exact range, icluding the lover and upper limits
 
 ##### 08.04.03. Packages with a scope
   @scope_name/package_name
@@ -92,22 +92,22 @@
 ##### 08.05.01. Direct and Indirect Dependencies
   - direct: where the project's code directly imports from / installed
   - indirect (aka "transitive dependency"): package that is needed by another
-    dependency --> dep. relations can be represented by a dep. tree.
+    dependency &larr; dep. relations can be represented by a dep. tree.
   - ? > TO SHOW DEPENDENCY TREE: "npm list -all"
 
 ##### 08.05.02. Development dependnecies ("dev dependencies")
   - It is a dependency that is only needed during development. i.e.: formatter
-  - ? > Install a dev. dep. : `npm install -save-dev{package_name}` --> this will
+  - ? > Install a dev. dep. : `npm install -save-dev{package_name}` &larr; this will
     list the dep under the devDependencies in package.json
 
 ##### 08.05.03. Role of package.json and package-lock.json and differences
   - ? > package.json: contains project metadata, configs and automation
   - ? > package-lock.json: describe indeirect and direct dependencies down to the
-      exact version number --> allows acurate rebuild without braking any code
+      exact version number &larr; allows acurate rebuild without braking any code
 
 ##### 08.05.04. npm ci (clean install)
   - to install a freshly downloaded project's dependencies
-  - best way with the command `npm ci` --> install dependencies from package-lock.json
+  - best way with the command `npm ci` &larr; install dependencies from package-lock.json
     with the right version. [link](https://docs.npmjs.com/cli/v8/commands/npm-ci)
 
 #### 08.06. Evaluating 3rd party code licensing
@@ -115,12 +115,12 @@
 
 #### 08.07. Evaluating 3rd party code security
   (aka "Software Supply Chain Security")
-  !!!-> npm packages have the risk potential to contain malwares, delete files or worse.
+  !!!&larr; npm packages have the risk potential to contain malwares, delete files or worse.
   - npm install reports vulnerabilities
   - use reliable source
   - !!! wait with installig updates: couple days to see if there are problems
     EXCEPT: security updates
-  - npm audit: install package into an empty project and run 'npm audit' -> does a security scan [link](https://docs.npmjs.com/cli/v8/commands/npm-audit)
+  - npm audit: install package into an empty project and run 'npm audit' &larr; does a security scan [link](https://docs.npmjs.com/cli/v8/commands/npm-audit)
   - use 3rd party security tools (i.e. Synk)
 
 #### 08.08. Updating dependnecies
@@ -128,7 +128,7 @@
 
 ### 09. Bundlers, buildtools and front-end toolchains
 #### 09.01. Bundling code
-  - bundler will: analyze -> order -> sort -> combine the code --> send to browser
+  - bundler will: analyze &larr; order &larr; sort &larr; combine the code &larr; send to browser
   - Bundlers can also bundle non-JavaScript code like CSS
     * [Esbuild](https://esbuild.github.io/)
     * [Rollup](https://rollupjs.org/guide/en/)
@@ -248,7 +248,7 @@ In JS inside an `async` function >> i.e.:
       return json;
     };
   ```
-  * \*options_object: i.e.: `{method: "DELETE"}` >> GET if no options object
+  * \*options_object: i.e.: `{method: "DELETE"}` >> `GET` if no options object
 
 ### 06. Status codes
 - they tell us how the backend handeled a request
@@ -262,13 +262,13 @@ JS: use the status property of the response object
   ```
 
 #### Most used statuscodes:
-* 200 OK -> request handled successfuly
-* 201 Created -> successful request,
-* 401 Unauthorized -> request without or with wrong auth details
-* 403 Forbidden -> system sending the request is not authorized to read the resource or perform the operation on it
-* 404 Not Found -> esource the request was aiming at could not be found on the json-server
-* 429 Too Many Requests -> too many requests from the same source
-* 500 Internal Server Error -> backend has an unrecoverable problem while processing the request
+* 200 OK &larr; request handled successfuly
+* 201 Created &larr; successful request,
+* 401 Unauthorized &larr; request without or with wrong auth details
+* 403 Forbidden &larr; system sending the request is not authorized to read the resource or perform the operation on it
+* 404 Not Found &larr; esource the request was aiming at could not be found on the json-server
+* 429 Too Many Requests &larr; too many requests from the same source
+* 500 Internal Server Error &larr; backend has an unrecoverable problem while processing the request
 
 ### 07. Response body
 #### 07.01. POST method
@@ -389,7 +389,7 @@ FORMAT EXAMPLE:
 
 ##### Exercise: inspect headers in browser devtools
   - headers tab in network tab
-  - same for Postman -> add custom header {key:value}
+  - same for Postman &larr; add custom header {key:value}
 
 #### 08.06. Exercise: inspect headers in JavaScript
   - headers property of the response object is a headers object
@@ -464,7 +464,7 @@ FORMAT EXAMPLE:
 #### 10.04. Common Async Patterns
 ##### Pitfall of async code in JS:
   - `await` blocks the code until it is resolved so awaiting at the top level of our code is not a good idea, it is better to await things when it is actually needed
-  - anything that depends on the result of await should be handled inside the async function itself. (with multiple, interdependent functions this can get complicated quickly -> everything is async)
+  - anything that depends on the result of await should be handled inside the async function itself. (with multiple, interdependent functions this can get complicated quickly &larr; everything is async)
   
 ##### Avoid having async functions everywhere:
   __Inversion of control__:   
@@ -481,8 +481,8 @@ FORMAT EXAMPLE:
   that has nothing to do with the async data should run independently. >> DO NOT await   
   async code at the top level (EXECEPTION EXIST).   
 
-  All the awaiting happens inside the async function which is not awaited itself -> as soon it hits an await the the control flow is handeled back to wherever the      
-  async function was called -> rest of the code continues to execute (concept - EVENT LOOP)   
+  All the awaiting happens inside the async function which is not awaited itself &larr; as soon it hits an await the the control flow is handeled back to wherever the      
+  async function was called &larr; rest of the code continues to execute (concept - EVENT LOOP)   
 
 ##### Successive async function calls (async code depends on other async code)
   i.e.: make request based on prev requested data   
@@ -494,7 +494,7 @@ FORMAT EXAMPLE:
     }
     ```
 
-##### Multiple independent async code -> paralel requests >> do not await them in succession
+##### Multiple independent async code &larr; paralel requests >> do not await them in succession
   i.e.:   
     ```javascript
     async function handlePosts() {
@@ -530,7 +530,7 @@ FORMAT EXAMPLE:
     }
   
     await Promise.all([ // takes an array of promisses and resolvs when all of them are resolved
-  	handlePosts(),    // returns a single promise, aggregating the results of multiple promisses -> used with relaterd promisses
+  	handlePosts(),    // returns a single promise, aggregating the results of multiple promisses &larr; used with relaterd promisses
   	handleFriends(),
     ]);
   }
@@ -571,7 +571,7 @@ They can be created in multiple ways:
   });
   ```
   there is a specific way to define what happens when a p. is fulfilled or rejected:   
-  1. .then() method -> takes the Promise value as its argument   
+  1. .then() method &larr; takes the Promise value as its argument   
      ```javascript
      amILucky.then((fulfilledValue) => console.log(fulfilledValue));
      ```
@@ -610,7 +610,7 @@ They can be created in multiple ways:
   [MDN - event loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)   
 
 ### 13. Render API response in DOM
-  ![figure application (fe <-> be)](./winc-fe-notes-figures/application.png)   
+  ![figure application (fe &harr; be)](./winc-fe-notes-figures/application.png)   
   
   __good place to start where the least connections & interdependencies are between the diff parts__   
   - not a lot of other code is needed for this part and testing is easier too
@@ -669,7 +669,7 @@ React adds a layer of abstraction over using JS directly on the DOM
   higher version of DOM - it can be uploaded independently of the real DOM   
   it is not able to make changes on the screen (it has all the props as the real DOM however)   
   
-  if change in React -> new version of V-DOM -> periodically compared to the real DOM and updates whenever    
+  if change in React &larr; new version of V-DOM &larr; periodically compared to the real DOM and updates whenever    
   there is a diff === RECONCILIATION   
 
 #### Other frameworks:
@@ -759,6 +759,7 @@ export default App;
 JSX code goes inside `return ()`   
 
 ### 03. Rendering Components
+#### Rendering
 React uses a render function that takes two arguments: HTML code and an HTML element.      
 
 It is to display HTML code inside the specified HTML element. I.e.: (from my-first-app/src/main.jsx)      
@@ -769,10 +770,75 @@ ReactDOM.createRoot(document.getElementById('root')).render(  // define root DOM
   </React.StrictMode>,
 )
 ```
-- everything inside root is handled by react (almost always a single root DOM node / react app)   
-- render() -> to render a React element:   
+- everything inside root is handled by React (almost always a single root DOM node / React app)   
+- `render()` &larr; to render a React element:   
 	* pass the root DOM element (`document.getElementById('root')` to `ReactDOM.createRoot()`
 	* then use the __render function__ on this root element   
+- the React DOM uses a Virtual DOM   
+	* the V-DOM is a lighter, in memory version of the DOM
+	* can be updated without effecting the DOM
+	* contains the sam properties, but it can't make changes on the screen   
+	* React detects the elements that were changed and updates the DOM (uncanged DOM elements will not render again)
+  > change in React &larr; V-DOM render &larr; React compares V-DOM and DOM periodically &larr; when diff. DOM is updated (reconciliation process)   
+
+#### Components
+A React app consists of many different components.     
+These can be reused if needed.   
+
+Components can be defined as <u>__functions__</u> (easier to use and maintain) or __classes__.  
+
+Example for a __React Function Component__:   
+```javascript
+import './App.css';  // import styles
+
+export const App = () => {  // export App component
+  const hello = "Hello Wincer!"; 
+
+  return (  // return JSX
+    <main>
+      <h1>{hello}</h1> // inject JS code by wrapping the variable name in {}, the value will render as an <h1>
+    </main>
+  );
+};
+```
+It is possible to render a component inside another component
+```javascript
+import './App.css';
+
+const Button = () => {  // define a Button component within the same file (can also be imported, !name is capitalized by conv.
+  return (
+    <button className="Button">Press me!</button>  // note: className (because 'class' is a reserved word in JS)
+  );
+};
+
+
+export const App = () => {
+  const hello = "Hello Wincer!";
+
+  return (
+    <main>
+      <h1>{hello}</h1>
+      <Button />  // to use inside "App", wrap "Button" in < /> when adding it to the JSX code, note: capitalized name to ditinguish from <button>
+    </main>
+  );
+};
+```
+
+#### Fragment
+__! in React only one element can be returned from a component__   
+SOLUTION: wrap components in a container such as `<div>` or in a __React Fragment__   
+Fragment syntax: `<React.Fragment>...</React.fragment>` or `<>...</>`   
+Example:
+```javascript
+export const App = () => {
+	return (
+		<>
+			<Header />
+			<Footer />
+		</>
+	);
+);
+```
 
 
 
