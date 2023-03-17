@@ -1,5 +1,15 @@
 # FRONT-END DEVELOPMENT
+##### Table of Contents (FE Modules)
+[m1](## -- FE Module 1)
 
+---
+## -- FE Module 1
+## -- FE Module 2
+## -- FE Module 3
+## -- FE Module 4
+## -- FE Module 5
+## -- FE Module 6
+## -- FE Module 7
 ## Professional coding setup -- FE Module 8
 ### 01. CLI (command line interface)
 - ? > where am I - `pwd` (print working directory)
@@ -811,7 +821,6 @@ const Button = () => {  // define a Button component within the same file (can a
   );
 };
 
-
 export const App = () => {
   const hello = "Hello Wincer!";
 
@@ -827,7 +836,7 @@ export const App = () => {
 #### Fragment
 __! in React only one element can be returned from a component__   
 SOLUTION: wrap components in a container such as `<div>` or in a __React Fragment__   
-Fragment syntax: `<React.Fragment>...</React.fragment>` or `<>...</>`   
+Fragment syntax: `<React.Fragment>...</React.Fragment>` or `<>...</>`   
 Example:
 ```javascript
 export const App = () => {
