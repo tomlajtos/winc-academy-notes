@@ -324,68 +324,68 @@ FORMAT EXAMPLE:
 #### 08.03. Request and Response headers
 ##### Request Header Examples:
 - The Accept header (what content type the sender(client) accepts, single or multiple values
-  `Accept: text/html`
-  `Accept: */*`
-  `Accept:
-  text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,
-  */*;q=0.8,application/signed-exchange;v=b3;q=0.9`
+  `Accept: text/html`   
+  `Accept: */*`   
+  `Accept:   
+  text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,    
+  */*;q=0.8,application/signed-exchange;v=b3;q=0.9`   
 
-- The Accept-Language header (client preffered human langs and locals)
-  `Accept-Language: de` for German, not specified to a country
-  `Accept-Language: nl-NL` for Dutch in the Netherlands
-  `Accept-Language: es_PE` for Peruvian Spanish
+- The Accept-Language header (client preffered human langs and locals)   
+  `Accept-Language: de` for German, not specified to a country   
+  `Accept-Language: nl-NL` for Dutch in the Netherlands   
+  `Accept-Language: es_PE` for Peruvian Spanish   
 
-- The Authorization header is used to send “credentials” to the server.
-  `Authorization: Basic taHDUsyEoZrxLTgkb7Ff`
-  `Authorization: Bearer CMn0QUmeH2miABK0d6qQ`
+- The Authorization header is used to send “credentials” to the server.   
+  `Authorization: Basic taHDUsyEoZrxLTgkb7Ff`   
+  `Authorization: Bearer CMn0QUmeH2miABK0d6qQ`   
 
-- The Host header is a required and essential header.
-  contains the host and, optionally, the port the message is sent to
-  `Host: localhost:3000`
-  `Host: www.bbc.com`
-  `Host: en.wikipedia.org`
+- The Host header is a required and essential header.   
+  contains the host and, optionally, the port the message is sent to   
+  `Host: localhost:3000`   
+  `Host: www.bbc.com`   
+  `Host: en.wikipedia.org`   
 
-- The User-Agent (or UA) header gives the receiver information about what kind of
-  system the sender is.
-  `User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0`
-  `User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)
-   Chrome/51.0.2704.103 Safari/537.36`
-  `User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows Phone OS 7.5; Trident/5.0;
-   IEMobile/9.0)`
+- The User-Agent (or UA) header gives the receiver information about what kind of   
+  system the sender is.   
+  `User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0`   
+  `User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)   
+   Chrome/51.0.2704.103 Safari/537.36`   
+  `User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows Phone OS 7.5; Trident/5.0;   
+   IEMobile/9.0)`   
 
 ##### Rresponse Header Examples:
-- The Content-Language Header
-  describes the language of the document
-  `Content-Language: pt-BR` for Brazilian Portuguese.
-  `Content-Language: en-CM` for English from the country Cameroon
-  `Content-Language: nl-BE` for Belgian Dutch
+- The Content-Language Header   
+  describes the language of the document   
+  `Content-Language: pt-BR` for Brazilian Portuguese.   
+  `Content-Language: en-CM` for English from the country Cameroon   
+  `Content-Language: nl-BE` for Belgian Dutch   
 
 ##### Request and Rresponse Header Examples:
-- The Cache-Control Header
-  contain instructions for the receiver on how to “cache” the content of the message
-  saving a received message locally so you don’t need to ask for it again which improves performance.
-  `Cache-Control: no-store`
-  `Cache-Control: public, max-age=86400`
-  `Cache-Control: public, min-fresh=3153600`
+- The Cache-Control Header   
+  contain instructions for the receiver on how to “cache” the content of the message   
+  saving a received message locally so you don’t need to ask for it again which improves performance.   
+  `Cache-Control: no-store`   
+  `Cache-Control: public, max-age=86400`   
+  `Cache-Control: public, min-fresh=3153600`   
 
-- The Content-Langth Header
-  communicates the size of the message body in bytes
-  `Content-Length: 42`
-  `Content-Length: 544`
-  `Content-Length: 256808`
+- The Content-Langth Header   
+  communicates the size of the message body in bytes   
+  `Content-Length: 42`   
+  `Content-Length: 544`   
+  `Content-Length: 256808`   
 
-- The Content Type Header
-  communicates the type of resource being sent
-  `Content-Type: text/html; charset=utf-8`
-  `Content-Type: text/css`
-  `Content-Type: image/png`
-  `Content-Type: application/json`
+- The Content Type Header   
+  communicates the type of resource being sent   
+  `Content-Type: text/html; charset=utf-8`   
+  `Content-Type: text/css`   
+  `Content-Type: image/png`   
+  `Content-Type: application/json`   
 
-- The Expires Header
-  communicates to the receiver when the response  will expire
-  `Expires: Wed, 21 Oct 2015 07:28:00 GMT`
-  `Expires: Thu, 2 Dec 2023 10:43:00 GMT`
-  `Expires: Mon, 17 Jan 2022 17:12:00 GMT`
+- The Expires Header   
+  communicates to the receiver when the response  will expire   
+  `Expires: Wed, 21 Oct 2015 07:28:00 GMT`   
+  `Expires: Thu, 2 Dec 2023 10:43:00 GMT`   
+  `Expires: Mon, 17 Jan 2022 17:12:00 GMT`   
 
 ##### Exercise: inspect headers in browser devtools
   - headers tab in network tab
@@ -400,7 +400,7 @@ FORMAT EXAMPLE:
     console.log(`${header}: ${value}`);
   }
   ```
- - check if a specific header exists(.has), check header value(.get):
+ - check if a specific header exists(.has), check header value(.get):   
   ```javascript
   const response = await fetch("http://localhost:3000/tables");
   const headers = response.headers;
@@ -411,7 +411,7 @@ FORMAT EXAMPLE:
   console.log(contentType); //application/json: charset=utf-8
   ```
 #### 08.07. Setting headers in fetch
-  - to set custom header in a request add headers prop to options object we pass to fetch
+  - to set custom header in a request add headers prop to options object we pass to fetch   
   ```javascript
   const url = "https://www.example.com"
   const body = {a: 1};
@@ -429,7 +429,7 @@ FORMAT EXAMPLE:
 
 ### 09. Separating business logic from UI and IO
   - better readability
-  - better maintainability
+  - better maintainability   
     i.e. makes adding new logic easier, debugging easier etc.
   - makes switching frameworks easier
   - makes writing tests easier (separate test for IO, UI, b. logic)
@@ -437,7 +437,7 @@ FORMAT EXAMPLE:
 ### 10. Async / Await - Asynchronous JavaScript
   - keep the program running while it is waiting for a server response
   - if an async function returns a value we have to await that value... othervise  it is undefined.
-  i.e:
+  i.e:   
   ```javascript
   async function getData() { //asynchronous function declaration
     return 42;
@@ -446,9 +446,8 @@ FORMAT EXAMPLE:
   const data = await getData(); // data is 42;
   ```
 
-  for server requestsi, the fetch method has to be wrapped in an async function,
-  and the response has to be awaited.
-  each async function has to be awaited:   
+  for server requestsi, the fetch method has to be wrapped in an async function,   
+  and the response has to be awaited. Also, each async function has to be awaited:   
   ```javascript
   async function fetchData() {
     try {
@@ -468,25 +467,25 @@ FORMAT EXAMPLE:
   - anything that depends on the result of await should be handled inside the async function itself. (with multiple, interdependent functions this can get complicated quickly -> everything is async)
   
 ##### Avoid having async functions everywhere:
-  __Inversion of control__:
-  instead of caller function we let the async function handle the result from the asynchronous code. i.e.:  
+  __Inversion of control__:   
+  instead of caller function we let the async function handle the result from the asynchronous code. i.e.:     
   ```javascript
 	async function handleData() {
 		const data = await fetchData();
 		showData(data); // synchronous function, async spreading is stopped
 	}
   ```
-  It is important to contain async code!
+  It is important to contain async code!   
 
-  The sync and async code should be separated as much as possible. The rest of the code
-  that has nothing to do with the async data should run independently. >> DO NOT await
-  async code at the top level (EXECEPTION EXIST).
+  The sync and async code should be separated as much as possible. The rest of the code   
+  that has nothing to do with the async data should run independently. >> DO NOT await   
+  async code at the top level (EXECEPTION EXIST).   
 
-  All the awaiting happens inside the async function which is not awaited itself -> as soon it hits an await the the control flow is handeled back to wherever the
-  async function was called -> rest of the code continues to execute (concept - EVENT LOOP)
+  All the awaiting happens inside the async function which is not awaited itself -> as soon it hits an await the the control flow is handeled back to wherever the      
+  async function was called -> rest of the code continues to execute (concept - EVENT LOOP)   
 
 ##### Successive async function calls (async code depends on other async code)
-  i.e.: make request based on prev requested data
+  i.e.: make request based on prev requested data   
     ```javascript
     async function handlePosts() {
       const user = await fetchUser();
@@ -496,7 +495,7 @@ FORMAT EXAMPLE:
     ```
 
 ##### Multiple independent async code -> paralel requests >> do not await them in succession
-  i.e.:
+  i.e.:   
     ```javascript
     async function handlePosts() {
       const asyncFriends = fetchFriends(); // no await
@@ -509,11 +508,11 @@ FORMAT EXAMPLE:
       showFriends(await asyncFriends);
     }
 	```
-  The fetches result (a promise) is stored in a constant.
-  We do not have to immediately await an async function in order to get the data out of it.
-  We can keep a reference to the Promise and await it later on
+  The fetche's result (a promise) is stored in a constant.      
+  We do not have to immediately await an async function in order to get the data out of it.      
+  We can keep a reference to the Promise and await it later on   
 
-##### Different requests can take different time (some times big diff)
+##### Different requests can take different time (some times big diff)   
   - each requests should be handled as the result comes in
   - wrap them individually an async function
   - call them independently and handle them in the order they come in
@@ -539,27 +538,26 @@ FORMAT EXAMPLE:
   [more about Promise.all](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)
 
 ##### Top level await
-  It is possible to awati at the top level of a JS module, __HOWEVER__:
+  It is possible to awati at the top level of a JS module, __HOWEVER__:   
   - a module with top level await will be awaited by other modules when they import it so it sort of blocks the execution (other imported synchronous modules will run tho)
-  __!!!Only use top level await in modules that are strictly used for fetching some data and exporting it, and never place synchronous code after your asynchronous code when
-  using top-level await (unless you need the result of the asynchronous code).__
+  __!!!Only use top level await in modules that are strictly used for fetching some data and exporting it, and never place synchronous code after your asynchronous code when using top-level await (unless you need the result of the asynchronous code).__   
 
-  EXTRA RESOURCES for async/await:
+  EXTRA RESOURCES for async/await:   
   - [Async function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
   - [Await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
 
 ### 11. Promises
-(async/await is built on top of promises)
+(async/await is built on top of promises)   
 - Promise: a special type of object that holds a future value  (not yet now at that point in the code execution)
 
-Async/Await is preferred ower Promises => more modern, promises are used in older codebases, libraries
+Async/Await is preferred ower Promises => more modern, promises are used in older codebases, libraries   
 
-The different state of promises:
+The different state of promises:   
   - pending : at the time when it is created
   - fulfilled
   - rejected
 
-They can be created in multiple ways:
+They can be created in multiple ways:   
   - using 'fetch' > fetch automatically returns a promise
   - each async function returns a promise
   - they are object with methods and we can create them ourselves by using the 'new' keyword (but this is increasingly rare, mostly done in library code)
@@ -572,20 +570,20 @@ They can be created in multiple ways:
     resolve('You're lucky!);
   });
   ```
-  there is a specific way to define what happens when a p. is fulfilled or rejected:
-  1, .then() method -> takes the Promise value as its argument
+  there is a specific way to define what happens when a p. is fulfilled or rejected:   
+  1. .then() method -> takes the Promise value as its argument   
      ```javascript
      amILucky.then((fulfilledValue) => console.log(fulfilledValue));
      ```
-  2, handling errors can be done in two ways: using .then() or using .catch():
+  2. handling errors can be done in two ways: using .then() or using .catch():   
      ```javascript
      amILucky
       .then((fulfilledValue) => console.log(fulfilledValue));
       .catch((error) => console.log('some message', error));
      ```
 #### Chaining Promises
-  both .then() and .catch() return new promises > so we can chain several of them together
-  This allows for complex code i.e. performing several requests in succession.
+  both .then() and .catch() return new promises > so we can chain several of them together   
+  This allows for complex code i.e. performing several requests in succession.   
 
   ```javascript
   fetch('http://localhost:3000/todo')
@@ -594,8 +592,8 @@ They can be created in multiple ways:
     .catch(error => console.error('no todos found!'));
   ```
 
-[Promises - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
-[Using Promises - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
+[Promises - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)   
+[Using Promises - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)   
 
 ### 12. Event Loop
   - The event loop is a loop where the code can be scheduled
@@ -608,34 +606,34 @@ They can be created in multiple ways:
   - but also there are requestAnimationTimeframe and micro tasks which get executed in different times in relation to the browser page-rendering
   and their execution also depends on the state of the JS callstack. >> can get complicated and lead to unexpected rendering
 
-  [YT vid - Jake Archibald](https://www.youtube.com/watch?v=cCOL7MC4Pl0)
-  [MDN - event loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
+  [YT vid - Jake Archibald](https://www.youtube.com/watch?v=cCOL7MC4Pl0)   
+  [MDN - event loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)   
 
 ### 13. Render API response in DOM
-  ![figure application (fe <-> be)](./winc-fe-notes-figures/application.png)
+  ![figure application (fe <-> be)](./winc-fe-notes-figures/application.png)   
   
-  __good place to start where the least connections & interdependencies are between the diff parts__
+  __good place to start where the least connections & interdependencies are between the diff parts__   
   - not a lot of other code is needed for this part and testing is easier too
   - from the diagram these are: IO for sending or retrievieng, UI part where we render HTML based on data
 
-  __or places/features that are close to user interaction__
+  __or places/features that are close to user interaction__   
   - i.e.: code that listens to and processes events, easy testing, easy to see if we input the right data
   - diagram: user interaction part
 
-  __start with the "happy path", scenario when everithing works with realistic input__
+  __start with the "happy path", scenario when everithing works with realistic input__   
   - start with the easy part
   - dont worry about edge cases and diff errors
 
-  When all that is done, focus on code for when things go wrong:
+  When all that is done, focus on code for when things go wrong:   
   - validating user input
   - showing validation results
   - handling errors and displaying error messages correctly
 
-  Happy path in the diagram: app logic/business rules w/o validation, IO without catching errors
+  Happy path in the diagram: app logic/business rules w/o validation, IO without catching errors   
 
-  ! check if th code is woring before and after adding new features to it
+  ! check if th code is woring before and after adding new features to it   
 
-  ? END DETOUR ?
+  ? END DETOUR ?   
 
 #### Exercise: API response rendering
 
@@ -650,36 +648,36 @@ They can be created in multiple ways:
   - possibility of creating both web and mobile (React native framework) apps
   - good debugging tools (React Dev Tools in Chrome)
 
-  NOTE: it ships a lot of JS so loading time could be slow
-  SOLUTION: code splitting > only code that is needed will load sever side rendering > sends a fully rendered page as a static HTML markup
+  NOTE: it ships a lot of JS so loading time could be slow   
+  SOLUTION: code splitting > only code that is needed will load sever side rendering > sends a fully rendered page as a static HTML markup   
 
 #### Features:
-React adds a layer of abstraction over using JS directly on the DOM
-  - Components:
-  UI components are the building blocks of a bigger UI >> easy debug, re-use of component in multi page apps
+React adds a layer of abstraction over using JS directly on the DOM   
+  - Components:   
+  UI components are the building blocks of a bigger UI >> easy debug, re-use of component in multi page apps   
   
-  - Props:
-  using properties we can pass functions and data to other components >> dinamic/interacting components
+  - Props:   
+  using properties we can pass functions and data to other components >> dinamic/interacting components   
   
-  - State:
-  keep track of values by storing them in a "state" object
+  - State:   
+  keep track of values by storing them in a "state" object   
   
-  - JSX:
-  components use JSX (JS XML) which is an extension to JS - combines parts of HTML and JS
+  - JSX:   
+  components use JSX (JS XML) which is an extension to JS - combines parts of HTML and JS   
   
-  - Virtual DOM:
-  higher version of DOM - it can be uploaded independently of the real DOM
-  it is not able to make changes on the screen (it has all the props as the real DOM however)
+  - Virtual DOM:   
+  higher version of DOM - it can be uploaded independently of the real DOM   
+  it is not able to make changes on the screen (it has all the props as the real DOM however)   
   
-  if change in React -> new version of V-DOM -> periodically compared to the real DOM and updates whenever 
-  there is a diff === RECONCILIATION
+  if change in React -> new version of V-DOM -> periodically compared to the real DOM and updates whenever    
+  there is a diff === RECONCILIATION   
 
 #### Other frameworks:
   - Angular (old but receiving major improvements lately
   - Vue
   - Backbone
   - Ember 
-  etc.
+  etc.   
 
 #### Drawbacks in React:
  - documentation is less beginner friendly and not very structured
@@ -707,7 +705,7 @@ React adds a layer of abstraction over using JS directly on the DOM
   7. `src/App.js` is the file that's running a code at --localhost 
 
 #### Files and Directories, Organize a project:
-can be done based on <u>types</u>, features, pages, etc.
+can be done based on <u>types</u>, features, pages, etc.   
 
   - create a `components` folder inside `src` (for reusable comps) 
     /some comps have child-parent realationship - these can be grouped in a folder inside `components`
@@ -717,28 +715,28 @@ can be done based on <u>types</u>, features, pages, etc.
 <img src="./winc-fe-notes-figures/react-project-str.jpg" title="React project file structure" alt="Basic React project structure" width="50%" height="50%"/>
 
 #### Importing and Exporting files
-[MDN documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
+[MDN documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)   
 
-Ways to use import in React:
+Ways to use import in React:   
 1. import a default export
 ```javascript
 export default App;
 //////////////////////////////
 import App from "./App";
 ```
-2. when export is not a default exp. << __RECOMMENDED__
+2. when export is not a default exp. << __RECOMMENDED__   
 ```javascript
 export const App = () => {...}
 //////////////////////////////
 import {App} from "./App"
 ```
-To import multiple modules:
+To import multiple modules:   
 `import React, {useState} from 'react';`
 
 ### 02. JSX (JavaScript XML)
-It is a combination of JS and HTML
-Allows for an easier DOM manipulation, but with an extra layer of abstraction,    
-it is transformed into JS and HTML which the browser can understand    
+It is a combination of JS and HTML   
+Allows for an easier DOM manipulation, but with an extra layer of abstraction,       
+it is transformed into JS and HTML which the browser can understand       
 Example code of a simple component:   
 ```javascript
 import './App.css';
@@ -758,12 +756,12 @@ function App() {
 export default App;
 ```
 
-JSX code goes inside `return ()`
+JSX code goes inside `return ()`   
 
-### Rendering Components
-React uses a render function that takes two arguments: HTML code and an HTML element.   
+### 03. Rendering Components
+React uses a render function that takes two arguments: HTML code and an HTML element.      
 
-It is to display HTML code inside the specified HTML element. I.e.: (from my-first-app/src/main.jsx)   
+It is to display HTML code inside the specified HTML element. I.e.: (from my-first-app/src/main.jsx)      
 ```javascript
 ReactDOM.createRoot(document.getElementById('root')).render(  // define root DOM node
   <React.StrictMode>
@@ -771,8 +769,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(  // define root DOM
   </React.StrictMode>,
 )
 ```
-- everything inside root is handled by react (almost always a single root DOM node / react app)
-- render() -> to render a React element:
+- everything inside root is handled by react (almost always a single root DOM node / react app)   
+- render() -> to render a React element:   
 	* pass the root DOM element (`document.getElementById('root')` to `ReactDOM.createRoot()`
 	* then use the __render function__ on this root element   
 
