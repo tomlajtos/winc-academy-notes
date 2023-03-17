@@ -1,6 +1,6 @@
 # FRONT-END DEVELOPMENT
 ##### Table of Contents (FE Modules)
-[m1](#m1-|-fe-module-1)
+[m1](#m1-|-fe-module-1)   
 [Professional Coding Setup](#professional-coding-setup-|-fe-module-8)
 
 ---
