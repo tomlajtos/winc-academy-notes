@@ -6,7 +6,7 @@
 4. [Functions, Loops, Conditionals](https://github.com/tomlajtos/winc-academy-notes/blob/main/winc-academy-be-notes.md#functions-loops-conditionals--be-module-04)
 5. [Modules, Packages, Third Party Code](https://github.com/tomlajtos/winc-academy-notes/blob/main/winc-academy-be-notes.md#modules-packages-third-party-code--be-module-05)
 6. [Object Oriented Programming](https://github.com/tomlajtos/winc-academy-notes/blob/main/winc-academy-be-notes.md#object-oriented-programming--be-module-06)
-7. [Debugging and Testing]https://github.com/tomlajtos/winc-academy-notes/blob/main/winc-academy-be-notes.md#debugging-and-testing--be-module-07
+7. [Debugging and Testing](https://github.com/tomlajtos/winc-academy-notes/blob/main/winc-academy-be-notes.md#debugging-and-testing--be-module-07)
 8. [Python Frameworks: FLASK](https://github.com/tomlajtos/winc-academy-notes/blob/main/winc-academy-be-notes.md#python-frameworks-flask--be-module-08)
 9. [Working With Relational Databases](https://github.com/tomlajtos/winc-academy-notes/blob/main/winc-academy-be-notes.md#working-with-relational-databases--be-module-09)
 10. [Deploying Your Project](https://github.com/tomlajtos/winc-academy-notes/blob/main/winc-academy-be-notes.md#deploying-your-project--be-module-10)
