@@ -11,7 +11,7 @@
 ## -- FE Module 5
 ## -- FE Module 6
 ## -- FE Module 7
-## Professional coding setup -- FE Module 8
+## Professional coding setup | FE Module 8
 ### 01. CLI (command line interface)
 - ? > where am I - `pwd` (print working directory)
 - ? > list - `ls/ ls -l/ -ls -la`
