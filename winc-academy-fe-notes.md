@@ -243,12 +243,12 @@ use restournat.json >> json-server >> endpoints: localhost:3000/menu, /tables, /
 In JS inside an `async` function >> i.e.:
    ```javascript
     const sendRequest = async() => {
-      const response = await fetch("URL",{options_obj*});
+      const response = await fetch("URL",{options_obj}); //*
       const json = await response.json();
       return json;
     };
   ```
-  ** options object: i.e.: {method: "DELETE"} >> GET if no options object
+  * \*options_object: i.e.: `{method: "DELETE"}` >> GET if no options object
 
 ### 06. Status codes
 - they tell us how the backend handeled a request
