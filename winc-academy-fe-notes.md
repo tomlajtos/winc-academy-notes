@@ -782,10 +782,10 @@ React uses a render function that takes two arguments: HTML code and an HTML ele
 It is to display HTML code inside the specified HTML element. I.e.: (from my-first-app/src/main.jsx)      
 ```javascript
 ReactDOM.createRoot(document.getElementById('root')).render(  // define root DOM node
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+	<React.StrictMode>
+		<App />
+	</React.StrictMode>,
+);
 ```
 - everything inside root is handled by React (almost always a single root DOM node / React app)   
 - `render()` &larr; to render a React element:   
