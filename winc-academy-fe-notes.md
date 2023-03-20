@@ -743,7 +743,7 @@ import App from "./App";
 ```
 2. when export is not a default exp. << __RECOMMENDED__   
 ```javascript
-export const App = () => {...}
+export const App = () => {...};
 //////////////////////////////
 import {App} from "./App"
 ```
