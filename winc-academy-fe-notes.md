@@ -819,6 +819,7 @@ export const App = () => {  // export App component
 	);
 };
 ```
+
 It is possible to render a component inside another component
 ```javascript
 import './App.css';
