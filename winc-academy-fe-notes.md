@@ -782,7 +782,7 @@ React uses a render function that takes two arguments: HTML code and an HTML ele
 
 It is to display HTML code inside the specified HTML element. I.e.: (from my-first-app/src/main.jsx)      
 ```javascript
-	ReactDOM.createRoot(document.getElementById('root')).render(  // define root DOM node
+ReactDOM.createRoot(document.getElementById('root')).render(  // define root DOM node
 	<React.StrictMode>
 		<App />
 	</React.StrictMode>,
@@ -812,7 +812,7 @@ import './App.css';  // import styles
 export const App = () => {  // export App component
 	const hello = "Hello Wincer!"; 
 
-		return (  // return JSX
+  return (  // return JSX
 		<main>
 			<h1>{hello}</h1> // inject JS code by wrapping the variable name in {}, the value will render as an <h1>
 		</main>
@@ -830,7 +830,7 @@ const Button = () => {  // define a Button component within the same file (can a
 };
 
 export const App = () => {
-        const hello = "Hello Wincer!";
+  const hello = "Hello Wincer!";
 
 	return (
 		<main>
@@ -849,10 +849,10 @@ Example:
 ```javascript
 export const App = () => {
 	return (
-	<>
-		<Header />
-		<Footer />
-	</>
+    <>
+      <Header />
+      <Footer />
+    </>
 	);
 };
 ```
