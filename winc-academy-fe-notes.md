@@ -856,43 +856,6 @@ export const App = () => {
 );
 ```
 
-### 04. Props
-React properties are similar to arguments and parameters in JS.
-We can pass props to components, and use them in those components, similarly how we would do with param/args in JS functions    
 
-Passing props to components:   
-when rendering a component, pass props with HTML attr. like syntax.   
-Example code for passing props to components:   
-```javascript
-	export const App = () => {
-		const greeting = "Welcome to our cafe!";
-		const coffee = "Coffee";
-
-		return (
-			<div className="App">
-				<h1>{greeting}</h1>
-				<DrinkButtons drinkOne={"Tea"} drinkTwo={coffee} />
-			</div>
-		);
-	};
-```
-
-Using props inside components:   
-props are esentially JS objects, we can access them by creating the parameter __props__  and referring/accessing them as object.Key.   
-Example code for using prop inside components:
-```javascript
-	export const DrinkButtons = (props) => {
-		return (
-			<>
-				<h2>Would you like tea or coffee?</h2>
-				<div className="button-group">
-					<button className="button">{drinkOne}</button>
-					<button className="button">{drinkTwo}</button>
-				</div>
-			</>
-		);
-	};
-```
- 
 
 
