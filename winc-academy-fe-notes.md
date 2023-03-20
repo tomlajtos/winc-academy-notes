@@ -38,160 +38,160 @@
 ### 05. -
 
 ### 06. Node/npm
-  - install node/npm or NVM
-  - install nodemon (node monitor - live refresh on save in terminal)
+- install node/npm or NVM
+- install nodemon (node monitor - live refresh on save in terminal)
 
 ### 07. Installing global npm packages
-  - ? > `npm install -g package_name`
-  - ? > run a package without installing it ==> use 'npx' i.e.: `npx package_name`
-      (download &larr; run &larr; remove)
+- ? > `npm install -g package_name`
+- ? > run a package without installing it ==> use 'npx' i.e.: `npx package_name`
+		(download &larr; run &larr; remove)
 ### 08. JavaScript projects
 #### 08.01. Initialize a project with npm
-  - in project root &larr; `npm init` &larr; answer qs &larr; creates package.json (editable)
+- in project root &larr; `npm init` &larr; answer qs &larr; creates package.json (editable)
 
 #### 08.02. Add script for nodemon
-  ```javascript
-  {
-  "name": "zodiac_esm_solution",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "type": "commonjs", // or "module" if ES Module (ESM)
-  "scripts": { // define script here // ? >
-  "start": "nodemon --quiet"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
-  }
-  ```
-  > ? > run the script: ./npm run start (runs nodemon in quiet mode)
+```javascript
+{
+"name": "zodiac_esm_solution",
+"version": "1.0.0",
+"description": "",
+"main": "index.js",
+"type": "commonjs", // or "module" if ES Module (ESM)
+"scripts": { // define script here // ? >
+"start": "nodemon --quiet"
+},
+"keywords": [],
+"author": "",
+"license": "ISC"
+}
+```
+> ? > run the script: ./npm run start (runs nodemon in quiet mode)
 
 #### 08.03 Splitting up a JavaScript project into modules
 ##### 08.03.01. CommonJS modules
-  - ? > export functions or variables with commonjs -- `modules.exports = { item1, item2, item2 };`
-  - ? > import from commonjs module -- `const {item1, item2, item3} = require("./moduleName");`
+- ? > export functions or variables with commonjs -- `modules.exports = { item1, item2, item2 };`
+- ? > import from commonjs module -- `const {item1, item2, item3} = require("./moduleName");`
 
 ##### 08.03.02. ES Modules (ESM)
-  - ? > export functions or variables with ESM -- `export { item1, item2, item3 };`
-  - ? > import from ES module -- `import { item1, item2, item3 } from "./moduleName.js";`
+- ? > export functions or variables with ESM -- `export { item1, item2, item3 };`
+- ? > import from ES module -- `import { item1, item2, item3 } from "./moduleName.js";`
 
 ##### 08.03.03. Using ESM and CommonJS in one project (ESM only is advised)
-  // !ONLY imports CommonJS modules into ES modules (doesn't work the other way)
-  - in package.json
-    `"type": "module",`
-  - CommonJS module file extension is: fileName.cjs
-  - import statement in ESM needs to point to the full path of the module.cjs, extension included!
-  - tools to help with managing this: i.e. Babel
+// !ONLY imports CommonJS modules into ES modules (doesn't work the other way)
+- in package.json
+	`"type": "module",`
+- CommonJS module file extension is: fileName.cjs
+- import statement in ESM needs to point to the full path of the module.cjs, extension included!
+- tools to help with managing this: i.e. Babel
 
 #### 08.04.  Package versions and scoped packages
 ##### 08.04.01. Semantic versioning:
-  > ? > Semantic version numbers look like this: 4.7.1 or 3.12.1 or 27.1.0.
-  - The 1st number indicates the MAJOR version.
-  - The 2nd number indicates the MINOR version.
-  - The 3rd number indicates the PATCH version.
+> ? > Semantic version numbers look like this: 4.7.1 or 3.12.1 or 27.1.0.
+- The 1st number indicates the MAJOR version.
+- The 2nd number indicates the MINOR version.
+- The 3rd number indicates the PATCH version.
 
 ##### 08.04.02. npm version calculator // [link](https://semver.npmjs.com/)
-  Query examples:
-  - '^2.1.3' &larr; any version with the same main version (1st no.) and minor and patch versions are equal or higher
-  - '~3.9.1' &larr; any verion within 3.9... patch number is equal or higher
-  - '>=4.1.0' &larr; any version that are equal or higher incl. major/minor/patch
-  - also based on the logic the following operators can be used too: >, <, <=
-  - 1.0.0 - 3.0.0 &larr; exact range, icluding the lover and upper limits
+Query examples:
+- '^2.1.3' &larr; any version with the same main version (1st no.) and minor and patch versions are equal or higher
+- '~3.9.1' &larr; any verion within 3.9... patch number is equal or higher
+- '>=4.1.0' &larr; any version that are equal or higher incl. major/minor/patch
+- also based on the logic the following operators can be used too: >, <, <=
+- 1.0.0 - 3.0.0 &larr; exact range, icluding the lover and upper limits
 
 ##### 08.04.03. Packages with a scope
-  @scope_name/package_name
-  - sometimes used by organizations - "@ibm/motion"
-  - or to group packages - i.e. "@storybook/"
-    Advantage: easier naming of npm packages, any name can be used within a scope
+@scope_name/package_name
+- sometimes used by organizations - "@ibm/motion"
+- or to group packages - i.e. "@storybook/"
+	Advantage: easier naming of npm packages, any name can be used within a scope
 
 #### 08.05. Third Party Dependencies
 ##### 08.05.01. Direct and Indirect Dependencies
-  - direct: where the project's code directly imports from / installed
-  - indirect (aka "transitive dependency"): package that is needed by another
-    dependency &larr; dep. relations can be represented by a dep. tree.
-  - ? > TO SHOW DEPENDENCY TREE: "npm list -all"
+- direct: where the project's code directly imports from / installed
+- indirect (aka "transitive dependency"): package that is needed by another
+	dependency &larr; dep. relations can be represented by a dep. tree.
+- ? > TO SHOW DEPENDENCY TREE: "npm list -all"
 
 ##### 08.05.02. Development dependnecies ("dev dependencies")
-  - It is a dependency that is only needed during development. i.e.: formatter
-  - ? > Install a dev. dep. : `npm install -save-dev{package_name}` &larr; this will
-    list the dep under the devDependencies in package.json
+- It is a dependency that is only needed during development. i.e.: formatter
+- ? > Install a dev. dep. : `npm install -save-dev{package_name}` &larr; this will
+	list the dep under the devDependencies in package.json
 
 ##### 08.05.03. Role of package.json and package-lock.json and differences
-  - ? > package.json: contains project metadata, configs and automation
-  - ? > package-lock.json: describe indeirect and direct dependencies down to the
-      exact version number &larr; allows acurate rebuild without braking any code
+- ? > package.json: contains project metadata, configs and automation
+- ? > package-lock.json: describe indeirect and direct dependencies down to the
+		exact version number &larr; allows acurate rebuild without braking any code
 
 ##### 08.05.04. npm ci (clean install)
-  - to install a freshly downloaded project's dependencies
-  - best way with the command `npm ci` &larr; install dependencies from package-lock.json
-    with the right version. [link](https://docs.npmjs.com/cli/v8/commands/npm-ci)
+- to install a freshly downloaded project's dependencies
+- best way with the command `npm ci` &larr; install dependencies from package-lock.json
+	with the right version. [link](https://docs.npmjs.com/cli/v8/commands/npm-ci)
 
 #### 08.06. Evaluating 3rd party code licensing
   conditions of oss/os project use is described in the project license (MIT etc.)
 
 #### 08.07. Evaluating 3rd party code security
-  (aka "Software Supply Chain Security")
-  !!!&larr; npm packages have the risk potential to contain malwares, delete files or worse.
-  - npm install reports vulnerabilities
-  - use reliable source
-  - !!! wait with installig updates: couple days to see if there are problems
-    EXCEPT: security updates
-  - npm audit: install package into an empty project and run 'npm audit' &larr; does a security scan [link](https://docs.npmjs.com/cli/v8/commands/npm-audit)
-  - use 3rd party security tools (i.e. Synk)
+(aka "Software Supply Chain Security")
+!!!&larr; npm packages have the risk potential to contain malwares, delete files or worse.
+- npm install reports vulnerabilities
+- use reliable source
+- !!! wait with installig updates: couple days to see if there are problems
+	EXCEPT: security updates
+- npm audit: install package into an empty project and run 'npm audit' &larr; does a security scan [link](https://docs.npmjs.com/cli/v8/commands/npm-audit)
+- use 3rd party security tools (i.e. Synk)
 
 #### 08.08. Updating dependnecies
-  - on Github, use 'Dependabot' to track dependnecy updates automatically
+- on Github, use 'Dependabot' to track dependnecy updates automatically
 
 ### 09. Bundlers, buildtools and front-end toolchains
 #### 09.01. Bundling code
-  - bundler will: analyze &larr; order &larr; sort &larr; combine the code &larr; send to browser
-  - Bundlers can also bundle non-JavaScript code like CSS
-    * [Esbuild](https://esbuild.github.io/)
-    * [Rollup](https://rollupjs.org/guide/en/)
-    * [Webpack](https://webpack.js.org/)
+- bundler will: analyze &larr; order &larr; sort &larr; combine the code &larr; send to browser
+- Bundlers can also bundle non-JavaScript code like CSS
+	* [Esbuild](https://esbuild.github.io/)
+	* [Rollup](https://rollupjs.org/guide/en/)
+	* [Webpack](https://webpack.js.org/)
 
 #### 09.02. Compilatoin
   - converting code into output files (Sass >> CSS, TypeScript >> JS)
 
 #### 09.03. Transpilation (source-to-source transpilation)
-  - rocess of taking code written using certain language constructs and converting it
-    into code that does the same but uses different language construct
-    i.e. ESM to CommonJS, or ES6 >> old JS for old browsers, Node >> browser
+- rocess of taking code written using certain language constructs and converting it
+	into code that does the same but uses different language construct
+	i.e. ESM to CommonJS, or ES6 >> old JS for old browsers, Node >> browser
 
 #### 09.04. Polyfilling (and code instead of transforming /like transpilation/)
-  - makes functionality available by adding code
-    i.e. [js-temporal_polyfill](https://www.npmjs.com/package/@js-temporal/polyfill)
+- makes functionality available by adding code
+	i.e. [js-temporal_polyfill](https://www.npmjs.com/package/@js-temporal/polyfill)
 
-  - XTRA-info: [link](https://javascript.info/polyfills)
-  - TOOLS for compilation and transpilation:
-    * [Sass compiler](https://www.npmjs.com/package/sass)
-    * [TypeScript compiler](https://www.npmjs.com/package/typescript)
-    * [Babel](https://babeljs.io/)
-    * [Webpack](https://webpack.js.org/)
+- XTRA-info: [link](https://javascript.info/polyfills)
+- TOOLS for compilation and transpilation:
+	* [Sass compiler](https://www.npmjs.com/package/sass)
+	* [TypeScript compiler](https://www.npmjs.com/package/typescript)
+	* [Babel](https://babeljs.io/)
+	* [Webpack](https://webpack.js.org/)
 
 #### 09.05. Image processing/optimization
-  - for website optimization (resize, crop) images need to be as light as possible
-  - Tools:
-    * [imagemin package](https://github.com/imagemin/imagemin)
+- for website optimization (resize, crop) images need to be as light as possible
+- Tools:
+	* [imagemin package](https://github.com/imagemin/imagemin)
 
 #### 09.06. Serving during development (dev server)
   - serv website and other project locally
   - some kind of live server application with HMR (hot module realoading)
 
 #### 09.07. Ttoolchains
-  - combination of tools configured to work together
-  - e.i. by popularity:
-    * [Vite](https://vitejs.dev/)
-    * [Parcer](https://parceljs.org/)
-    * [Rome](https://rome.tools/)
-    * [WMR](https://wmr.dev/)
+- combination of tools configured to work together
+- e.i. by popularity:
+	* [Vite](https://vitejs.dev/)
+	* [Parcer](https://parceljs.org/)
+	* [Rome](https://rome.tools/)
+	* [WMR](https://wmr.dev/)
 
 ### 10. Version control
 ### 11. Version control bsics
-  - git
-  - web service to host repositories online: Github
-    alt: Gitlab, Gitea
+- git
+- web service to host repositories online: Github
+	alt: Gitlab, Gitea
 
 ### 12. Git on the computer / local repo
 
@@ -258,25 +258,25 @@ use restournat.json >> json-server >> endpoints: localhost:3000/menu, /tables, /
 - can be sent to a namespace URL or a specific resource
 - response is some data or an error if the backend does not now the request (> status codes)
 In JS inside an `async` function >> i.e.:
-   ```javascript
-    const sendRequest = async() => {
-      const response = await fetch("URL",{options_obj}); //*
-      const json = await response.json();
-      return json;
-    };
-  ```
-  * \*options_object: i.e.: `{method: "DELETE"}` >> `GET` if no options object
+```javascript
+	const sendRequest = async() => {
+		const response = await fetch("URL",{options_obj}); //*
+		const json = await response.json();
+		return json;
+	};
+```
+* \*options_object: i.e.: `{method: "DELETE"}` >> `GET` if no options object
 
 ### 06. Status codes
 - they tell us how the backend handeled a request
 - it is a number between 100 & 599
 - they also have a short name (for display, not in the code)
   i.e.: '200 OK' or '404 Not Found'
-JS: use the status property of the response object
-  ```javascript
-    const response = await fetch("http://localhost:3000/menu/5");
-    console.log(response.status); //200
-  ```
+JS: use the status property of the response object   
+```javascript
+	const response = await fetch("http://localhost:3000/menu/5");
+	console.log(response.status); //200
+```
 
 #### Most used statuscodes:
 * 200 OK &larr; request handled successfuly
@@ -313,8 +313,8 @@ The backend usually walidates the object in the PUT body
 
 #### 07.03. POST, PUT and PATCH methods (JavaScript)
 Opton obj for `fetch` should include:
-  - a body
-  - a specific header
+- a body
+- a specific header
 
 * !Can't add a body to a GET with fetch (query params included in the query part of the URL)
 FORMAT EXAMPLE:
@@ -405,163 +405,163 @@ FORMAT EXAMPLE:
   `Expires: Mon, 17 Jan 2022 17:12:00 GMT`   
 
 ##### Exercise: inspect headers in browser devtools
-  - headers tab in network tab
-  - same for Postman &larr; add custom header {key:value}
+- headers tab in network tab
+- same for Postman &larr; add custom header {key:value}
 
 #### 08.06. Exercise: inspect headers in JavaScript
-  - headers property of the response object is a headers object
-  - log all headers from response:
-  ```javascript
-  const response = await fetch("http://localhost:3000");
-  for (const [header, value] of response.headers.entries()) {
-    console.log(`${header}: ${value}`);
-  }
-  ```
- - check if a specific header exists(.has), check header value(.get):   
-  ```javascript
-  const response = await fetch("http://localhost:3000/tables");
-  const headers = response.headers;
-  let contentType;
-  if (headers.has("content-type")) {
-    contentType = headers.get("content-type");
-  }
-  console.log(contentType); //application/json: charset=utf-8
-  ```
+- headers property of the response object is a headers object
+- log all headers from response:
+```javascript
+const response = await fetch("http://localhost:3000");
+for (const [header, value] of response.headers.entries()) {
+	console.log(`${header}: ${value}`);
+}
+```
+- check if a specific header exists(.has), check header value(.get):   
+```javascript
+const response = await fetch("http://localhost:3000/tables");
+const headers = response.headers;
+let contentType;
+if (headers.has("content-type")) {
+	contentType = headers.get("content-type");
+}
+console.log(contentType); //application/json: charset=utf-8
+```
 #### 08.07. Setting headers in fetch
-  - to set custom header in a request add headers prop to options object we pass to fetch   
-  ```javascript
-  const url = "https://www.example.com"
-  const body = {a: 1};
-  const options = {};
-  options.method = "POST";
-  options.body = JSON.sringify(body);
-  options.headers = {
-    Expires: "Thu, 2 Dec 2023 10:43:00 GMT",
-    "Content-Type": "application/json;charset=utf-8",
-  };
-  fetch(url, options);
-  ```
+- to set custom header in a request add headers prop to options object we pass to fetch   
+```javascript
+const url = "https://www.example.com"
+const body = {a: 1};
+const options = {};
+options.method = "POST";
+options.body = JSON.sringify(body);
+options.headers = {
+	Expires: "Thu, 2 Dec 2023 10:43:00 GMT",
+	"Content-Type": "application/json;charset=utf-8",
+};
+fetch(url, options);
+```
 #### 08.08. Exercise: set headers in JavaScript
- use syntax from above to add header to request body - inside options object for fetch()
+use syntax from above to add header to request body - inside options object for fetch()
 
 ### 09. Separating business logic from UI and IO
-  - better readability
-  - better maintainability   
-    i.e. makes adding new logic easier, debugging easier etc.
-  - makes switching frameworks easier
-  - makes writing tests easier (separate test for IO, UI, b. logic)
+- better readability
+- better maintainability   
+	i.e. makes adding new logic easier, debugging easier etc.
+- makes switching frameworks easier
+- makes writing tests easier (separate test for IO, UI, b. logic)
 
 ### 10. Async / Await - Asynchronous JavaScript
-  - keep the program running while it is waiting for a server response
-  - if an async function returns a value we have to await that value... othervise  it is undefined.
-  i.e:   
-  ```javascript
-  async function getData() { //asynchronous function declaration
-    return 42;
-  }
+- keep the program running while it is waiting for a server response
+- if an async function returns a value we have to await that value... othervise  it is undefined.
+i.e:   
+```javascript
+async function getData() { //asynchronous function declaration
+	return 42;
+}
 
-  const data = await getData(); // data is 42;
-  ```
+const data = await getData(); // data is 42;
+```
 
-  for server requestsi, the fetch method has to be wrapped in an async function,   
-  and the response has to be awaited. Also, each async function has to be awaited:   
-  ```javascript
-  async function fetchData() {
-    try {
-      const response = await fetch('http://localhost:3000/todo');
-      const todos = await response.json();
-      console.table(todos);
-    } catch (error) {
-      console.error('no todos found');
-    }
-  }
-  fetchData();
-  ```
+for server requestsi, the fetch method has to be wrapped in an async function,   
+and the response has to be awaited. Also, each async function has to be awaited:   
+```javascript
+async function fetchData() {
+	try {
+		const response = await fetch('http://localhost:3000/todo');
+		const todos = await response.json();
+		console.table(todos);
+	} catch (error) {
+		console.error('no todos found');
+	}
+}
+fetchData();
+```
 
 #### 10.04. Common Async Patterns
 ##### Pitfall of async code in JS:
-  - `await` blocks the code until it is resolved so awaiting at the top level of our code is not a good idea, it is better to await things when it is actually needed
-  - anything that depends on the result of await should be handled inside the async function itself. (with multiple, interdependent functions this can get complicated quickly &larr; everything is async)
+- `await` blocks the code until it is resolved so awaiting at the top level of our code is not a good idea, it is better to await things when it is actually needed
+- anything that depends on the result of await should be handled inside the async function itself. (with multiple, interdependent functions this can get complicated quickly &larr; everything is async)
   
 ##### Avoid having async functions everywhere:
-  __Inversion of control__:   
-  instead of caller function we let the async function handle the result from the asynchronous code. i.e.:     
-  ```javascript
-	async function handleData() {
-		const data = await fetchData();
-		showData(data); // synchronous function, async spreading is stopped
-	}
-  ```
-  It is important to contain async code!   
+__Inversion of control__:   
+instead of caller function we let the async function handle the result from the asynchronous code. i.e.:     
+```javascript
+async function handleData() {
+	const data = await fetchData();
+	showData(data); // synchronous function, async spreading is stopped
+}
+```
+It is important to contain async code!   
 
-  The sync and async code should be separated as much as possible. The rest of the code   
-  that has nothing to do with the async data should run independently. >> DO NOT await   
-  async code at the top level (EXECEPTION EXIST).   
+The sync and async code should be separated as much as possible. The rest of the code   
+that has nothing to do with the async data should run independently. >> DO NOT await   
+async code at the top level (EXECEPTION EXIST).   
 
-  All the awaiting happens inside the async function which is not awaited itself &larr; as soon it hits an await the the control flow is handeled back to wherever the      
-  async function was called &larr; rest of the code continues to execute (concept - EVENT LOOP)   
+All the awaiting happens inside the async function which is not awaited itself &larr; as soon it hits an await the the control flow is handeled back to wherever the      
+async function was called &larr; rest of the code continues to execute (concept - EVENT LOOP)   
 
 ##### Successive async function calls (async code depends on other async code)
-  i.e.: make request based on prev requested data   
-    ```javascript
-    async function handlePosts() {
-      const user = await fetchUser();
-      cosnt posts = await fetchPosts(user.id);
-      showPosts(posts); // regular sync function
-    }
-    ```
+i.e.: make request based on prev requested data   
+```javascript
+async function handlePosts() {
+	const user = await fetchUser();
+	cosnt posts = await fetchPosts(user.id);
+	showPosts(posts); // regular sync function
+}
+```
 
 ##### Multiple independent async code &larr; paralel requests >> do not await them in succession
-  i.e.:   
-    ```javascript
-    async function handlePosts() {
-      const asyncFriends = fetchFriends(); // no await
-      cosnt asyncPosts = fetchPosts(user.id); // no await
-      // both requests have been fired
+i.e.:   
+```javascript
+async function handlePosts() {
+	const asyncFriends = fetchFriends(); // no await
+	cosnt asyncPosts = fetchPosts(user.id); // no await
+	// both requests have been fired
 
-      // await the posts
-      showPosts(await asyncPosts);
-      // await friends
-      showFriends(await asyncFriends);
-    }
-	```
-  The fetche's result (a promise) is stored in a constant.      
-  We do not have to immediately await an async function in order to get the data out of it.      
-  We can keep a reference to the Promise and await it later on   
+	// await the posts
+	showPosts(await asyncPosts);
+	// await friends
+	showFriends(await asyncFriends);
+}
+```
+The fetche's result (a promise) is stored in a constant.      
+We do not have to immediately await an async function in order to get the data out of it.      
+We can keep a reference to the Promise and await it later on   
 
 ##### Different requests can take different time (some times big diff)   
-  - each requests should be handled as the result comes in
-  - wrap them individually an async function
-  - call them independently and handle them in the order they come in
+- each requests should be handled as the result comes in
+- wrap them individually an async function
+- call them independently and handle them in the order they come in
 
-  ```javascript
-  async function handleRequests() {
-    async function hadleFriends() {
-  	const friends = await fetchFriends();
-  	showFriends(friends);
-    }
-  
-    async function handlePosts() {
-  	const posts = await fetchPosts();
-  	showPosts(posts);
-    }
-  
-    await Promise.all([ // takes an array of promisses and resolvs when all of them are resolved
-  	handlePosts(),    // returns a single promise, aggregating the results of multiple promisses &larr; used with relaterd promisses
-  	handleFriends(),
-    ]);
-  }
-  ```
-  [more about Promise.all](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)
+```javascript
+async function handleRequests() {
+	async function hadleFriends() {
+	const friends = await fetchFriends();
+	showFriends(friends);
+	}
+
+	async function handlePosts() {
+	const posts = await fetchPosts();
+	showPosts(posts);
+	}
+
+	await Promise.all([ // takes an array of promisses and resolvs when all of them are resolved
+	handlePosts(),    // returns a single promise, aggregating the results of multiple promisses &larr; used with relaterd promisses
+	handleFriends(),
+	]);
+}
+```
+[more about Promise.all](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)
 
 ##### Top level await
-  It is possible to awati at the top level of a JS module, __HOWEVER__:   
-  - a module with top level await will be awaited by other modules when they import it so it sort of blocks the execution (other imported synchronous modules will run tho)
-  __!!!Only use top level await in modules that are strictly used for fetching some data and exporting it, and never place synchronous code after your asynchronous code when using top-level await (unless you need the result of the asynchronous code).__   
+It is possible to awati at the top level of a JS module, __HOWEVER__:   
+- a module with top level await will be awaited by other modules when they import it so it sort of blocks the execution (other imported synchronous modules will run tho)
+__!!!Only use top level await in modules that are strictly used for fetching some data and exporting it, and never place synchronous code after your asynchronous code when using top-level await (unless you need the result of the asynchronous code).__   
 
-  EXTRA RESOURCES for async/await:   
-  - [Async function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
-  - [Await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
+EXTRA RESOURCES for async/await:   
+- [Async function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
+- [Await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
 
 ### 11. Promises
 (async/await is built on top of promises)   
@@ -570,87 +570,87 @@ FORMAT EXAMPLE:
 Async/Await is preferred ower Promises => more modern, promises are used in older codebases, libraries   
 
 The different state of promises:   
-  - pending : at the time when it is created
-  - fulfilled
-  - rejected
+- pending : at the time when it is created
+- fulfilled
+- rejected
 
 They can be created in multiple ways:   
-  - using 'fetch' > fetch automatically returns a promise
-  - each async function returns a promise
-  - they are object with methods and we can create them ourselves by using the 'new' keyword (but this is increasingly rare, mostly done in library code)
+- using 'fetch' > fetch automatically returns a promise
+- each async function returns a promise
+- they are object with methods and we can create them ourselves by using the 'new' keyword (but this is increasingly rare, mostly done in library code)
 
-  ```javascript
-  const amILucky = new Promise((resolve, reject) => {
-    if (Math.random() < 0.99) {
-      reject(new Error('You ain't lucky'));
-    }
-    resolve('You're lucky!);
-  });
-  ```
-  there is a specific way to define what happens when a p. is fulfilled or rejected:   
-  1. .then() method &larr; takes the Promise value as its argument   
-     ```javascript
-     amILucky.then((fulfilledValue) => console.log(fulfilledValue));
-     ```
-  2. handling errors can be done in two ways: using .then() or using .catch():   
-     ```javascript
-     amILucky
-      .then((fulfilledValue) => console.log(fulfilledValue));
-      .catch((error) => console.log('some message', error));
-     ```
+```javascript
+const amILucky = new Promise((resolve, reject) => {
+	if (Math.random() < 0.99) {
+		reject(new Error('You ain't lucky'));
+	}
+	resolve('You're lucky!);
+});
+```
+there is a specific way to define what happens when a p. is fulfilled or rejected:   
+1. .then() method &larr; takes the Promise value as its argument   
+	 ```javascript
+	 amILucky.then((fulfilledValue) => console.log(fulfilledValue));
+	 ```
+2. handling errors can be done in two ways: using .then() or using .catch():   
+	 ```javascript
+	 amILucky
+		.then((fulfilledValue) => console.log(fulfilledValue));
+		.catch((error) => console.log('some message', error));
+	 ```
 #### Chaining Promises
-  both .then() and .catch() return new promises > so we can chain several of them together   
-  This allows for complex code i.e. performing several requests in succession.   
+both .then() and .catch() return new promises > so we can chain several of them together   
+This allows for complex code i.e. performing several requests in succession.   
 
-  ```javascript
-  fetch('http://localhost:3000/todo')
-    .then(response => response.json())
-    .then(todos => console.table(todos))
-    .catch(error => console.error('no todos found!'));
-  ```
+```javascript
+fetch('http://localhost:3000/todo')
+	.then(response => response.json())
+	.then(todos => console.table(todos))
+	.catch(error => console.error('no todos found!'));
+```
 
 [Promises - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)   
 [Using Promises - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)   
 
 ### 12. Event Loop
-  - The event loop is a loop where the code can be scheduled
-  - The most simple example is the setTimeout() function > schedules code, code runs after set time, time unit is ms.
-  ```javascript
-  setTimeout(() => {
-    alert('at least 1 second has passed');
-  }, 1000);
-  ```
-  - but also there are requestAnimationTimeframe and micro tasks which get executed in different times in relation to the browser page-rendering
-  and their execution also depends on the state of the JS callstack. >> can get complicated and lead to unexpected rendering
+- The event loop is a loop where the code can be scheduled
+- The most simple example is the setTimeout() function > schedules code, code runs after set time, time unit is ms.
+```javascript
+setTimeout(() => {
+	alert('at least 1 second has passed');
+}, 1000);
+```
+- but also there are requestAnimationTimeframe and micro tasks which get executed in different times in relation to the browser page-rendering
+and their execution also depends on the state of the JS callstack. >> can get complicated and lead to unexpected rendering
 
-  [YT vid - Jake Archibald](https://www.youtube.com/watch?v=cCOL7MC4Pl0)   
-  [MDN - event loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)   
+[YT vid - Jake Archibald](https://www.youtube.com/watch?v=cCOL7MC4Pl0)   
+[MDN - event loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)   
 
 ### 13. Render API response in DOM
 ![figure application (fe &harr; be)](./winc-fe-notes-figures/application.png)   
-  
-  __good place to start where the least connections & interdependencies are between the diff parts__   
-  - not a lot of other code is needed for this part and testing is easier too
-  - from the diagram these are: IO for sending or retrievieng, UI part where we render HTML based on data
 
-  __or places/features that are close to user interaction__   
-  - i.e.: code that listens to and processes events, easy testing, easy to see if we input the right data
-  - diagram: user interaction part
+__good place to start where the least connections & interdependencies are between the diff parts__   
+- not a lot of other code is needed for this part and testing is easier too
+- from the diagram these are: IO for sending or retrievieng, UI part where we render HTML based on data
 
-  __start with the "happy path", scenario when everithing works with realistic input__   
-  - start with the easy part
-  - dont worry about edge cases and diff errors
+__or places/features that are close to user interaction__   
+- i.e.: code that listens to and processes events, easy testing, easy to see if we input the right data
+- diagram: user interaction part
 
-  When all that is done, focus on code for when things go wrong:   
-  - validating user input
-  - showing validation results
-  - handling errors and displaying error messages correctly
+__start with the "happy path", scenario when everithing works with realistic input__   
+- start with the easy part
+- dont worry about edge cases and diff errors
 
-  Happy path in the diagram: app logic/business rules w/o validation, IO without catching errors   
+When all that is done, focus on code for when things go wrong:   
+- validating user input
+- showing validation results
+- handling errors and displaying error messages correctly
 
-  ! check if th code is woring before and after adding new features to it   
+Happy path in the diagram: app logic/business rules w/o validation, IO without catching errors   
 
-  ? END DETOUR ?   
+! check if th code is woring before and after adding new features to it   
+
+? END DETOUR ?   
 
 #### Exercise: API response rendering
 
@@ -658,76 +658,76 @@ They can be created in multiple ways:
 [documentation](https://react.dev/)
 ### Introduction 
 #### Benefits:
-  - less code more functionality compared to JS only approach
-  - rel. easy: combines JS and HTML concepts
-  - reusable: uses components as main building blocks for applications
-  - performance: uses virtual DOM, compares changes in the app and updates those changes in the real DOM (instead of updating all components)
-  - possibility of creating both web and mobile (React native framework) apps
-  - good debugging tools (React Dev Tools in Chrome)
+- less code more functionality compared to JS only approach
+- rel. easy: combines JS and HTML concepts
+- reusable: uses components as main building blocks for applications
+- performance: uses virtual DOM, compares changes in the app and updates those changes in the real DOM (instead of updating all components)
+- possibility of creating both web and mobile (React native framework) apps
+- good debugging tools (React Dev Tools in Chrome)
 
-  NOTE: it ships a lot of JS so loading time could be slow   
-  SOLUTION: code splitting > only code that is needed will load sever side rendering > sends a fully rendered page as a static HTML markup   
+NOTE: it ships a lot of JS so loading time could be slow   
+SOLUTION: code splitting > only code that is needed will load sever side rendering > sends a fully rendered page as a static HTML markup   
 
 #### Features:
 React adds a layer of abstraction over using JS directly on the DOM   
-  - Components:   
-  UI components are the building blocks of a bigger UI >> easy debug, re-use of component in multi page apps   
-  
-  - Props:   
-  using properties we can pass functions and data to other components >> dinamic/interacting components   
-  
-  - State:   
-  keep track of values by storing them in a "state" object   
-  
-  - JSX:   
-  components use JSX (JS XML) which is an extension to JS - combines parts of HTML and JS   
-  
-  - Virtual DOM:   
-  higher version of DOM - it can be uploaded independently of the real DOM   
-  it is not able to make changes on the screen (it has all the props as the real DOM however)   
-  
-  if change in React &larr; new version of V-DOM &larr; periodically compared to the real DOM and updates whenever    
-  there is a diff === RECONCILIATION   
+- Components:   
+UI components are the building blocks of a bigger UI >> easy debug, re-use of component in multi page apps   
+
+- Props:   
+using properties we can pass functions and data to other components >> dinamic/interacting components   
+
+- State:   
+keep track of values by storing them in a "state" object   
+
+- JSX:   
+components use JSX (JS XML) which is an extension to JS - combines parts of HTML and JS   
+
+- Virtual DOM:   
+higher version of DOM - it can be uploaded independently of the real DOM   
+it is not able to make changes on the screen (it has all the props as the real DOM however)   
+
+if change in React &larr; new version of V-DOM &larr; periodically compared to the real DOM and updates whenever    
+there is a diff === RECONCILIATION   
 
 #### Other frameworks:
-  - Angular (old but receiving major improvements lately
-  - Vue
-  - Backbone
-  - Ember 
-  etc.   
+- Angular (old but receiving major improvements lately
+- Vue
+- Backbone
+- Ember 
+etc.   
 
 #### Drawbacks in React:
- - documentation is less beginner friendly and not very structured
- - requires a lot of planning (because of its flexibility)
- - state management is not perfect
+- documentation is less beginner friendly and not very structured
+- requires a lot of planning (because of its flexibility)
+- state management is not perfect
 
 [Angular](https://www.ava.codes/posts/react-alternatives#toc-angular-a-stable-framework-based-on-typescript)   
 [Vue](https://www.ava.codes/posts/react-alternatives#toc-vue-js-a-framework-for-fast-ui-building)
 
 ### 01. Setup
 #### Steps
-  1. `pnpm create vite@latest my-first-app --template react`
-  2. `cd my-first-app` >> `npm install` => installs dependencies
-  3. edit Vite config 
-  4. `pnpm rund dev` => runs the app via __Vite__-server
-  5. `pnpm eslint --init` => set up Eslint
-  6. edit `eslintrc` >> 
-  
-  ```javascript
-  "rules": {
-  	"react/prop-types":0
-  }
-  ```
-  
-  7. `src/App.js` is the file that's running a code at --localhost 
+1. `pnpm create vite@latest my-first-app --template react`
+2. `cd my-first-app` >> `npm install` => installs dependencies
+3. edit Vite config 
+4. `pnpm rund dev` => runs the app via __Vite__-server
+5. `pnpm eslint --init` => set up Eslint
+6. edit `eslintrc` >> 
+
+	```javascript
+	"rules": {
+		"react/prop-types":0
+	}
+	```
+
+7. `src/App.js` is the file that's running a code at --localhost 
 
 #### Files and Directories, Organize a project:
 can be done based on <u>types</u>, features, pages, etc.   
 
-  - create a `components` folder inside `src` (for reusable comps) 
-    /some comps have child-parent realationship - these can be grouped in a folder inside `components`
-  - all generic UI comps will be grouped in a `ui` folder
-  - `pages` folder for page files, can add sub-folders for pages storing the page components, 1xuse comps
+- create a `components` folder inside `src` (for reusable comps) 
+	/some comps have child-parent realationship - these can be grouped in a folder inside `components`
+- all generic UI comps will be grouped in a `ui` folder
+- `pages` folder for page files, can add sub-folders for pages storing the page components, 1xuse comps
 
 <img src="./winc-fe-notes-figures/react-project-str.jpg" title="React project file structure" alt="Basic React project structure" width="50%" height="50%"/>
 
