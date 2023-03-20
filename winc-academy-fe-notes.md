@@ -888,8 +888,8 @@ export const DrinkButtons = (props) => {
 		<>
 			<h2>Would you like tea or coffee?</h2>
 			<div className="button-group">
-				<button className="button">{drinkOne}</button>
-				<button className="button">{drinkTwo}</button>
+				<button className="button">{props.drinkOne}</button>
+				<button className="button">{props.drinkTwo}</button>
 			</div>
 		</>
 	);
