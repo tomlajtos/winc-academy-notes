@@ -854,7 +854,7 @@ export const App = () => {
 		<Footer />
 	</>
 	);
-);
+};
 ```
 
 ### 04. Props
