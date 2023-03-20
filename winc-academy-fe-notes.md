@@ -761,6 +761,7 @@ import './App.css';
 function App() {
 	const greeting = "Hi, this is an app made with React"; // variables defined outside the `return()`
 	const description = <p>I think it holds an interestig future</p>;
+
 	return (
 		<div className="App">
 			<h1> Welcome! </h1>
@@ -781,7 +782,7 @@ React uses a render function that takes two arguments: HTML code and an HTML ele
 
 It is to display HTML code inside the specified HTML element. I.e.: (from my-first-app/src/main.jsx)      
 ```javascript
-ReactDOM.createRoot(document.getElementById('root')).render(  // define root DOM node
+	ReactDOM.createRoot(document.getElementById('root')).render(  // define root DOM node
 	<React.StrictMode>
 		<App />
 	</React.StrictMode>,
@@ -809,13 +810,13 @@ Example for a __React Function Component__:
 import './App.css';  // import styles
 
 export const App = () => {  // export App component
-  const hello = "Hello Wincer!"; 
+	const hello = "Hello Wincer!"; 
 
-  return (  // return JSX
-    <main>
-      <h1>{hello}</h1> // inject JS code by wrapping the variable name in {}, the value will render as an <h1>
-    </main>
-  );
+		return (  // return JSX
+		<main>
+			<h1>{hello}</h1> // inject JS code by wrapping the variable name in {}, the value will render as an <h1>
+		</main>
+	);
 };
 ```
 It is possible to render a component inside another component
@@ -823,20 +824,20 @@ It is possible to render a component inside another component
 import './App.css';
 
 const Button = () => {  // define a Button component within the same file (can also be imported, !name is capitalized by conv.
-  return (
-    <button className="Button">Press me!</button>  // note: className (because 'class' is a reserved word in JS)
-  );
+	return (
+		<button className="Button">Press me!</button>  // note: className (because 'class' is a reserved word in JS)
+	);
 };
 
 export const App = () => {
-  const hello = "Hello Wincer!";
+	const hello = "Hello Wincer!";
 
-  return (
-    <main>
-      <h1>{hello}</h1>
-      <Button />  // to use inside "App", wrap "Button" in < /> when adding it to the JSX code, note: capitalized name to ditinguish from <button>
-    </main>
-  );
+	return (
+		<main>
+			<h1>{hello}</h1>
+			<Button />  // to use inside "App", wrap "Button" in < /> when adding it to the JSX code, note: capitalized name to ditinguish from <button>
+		</main>
+	);
 };
 ```
 
@@ -848,10 +849,10 @@ Example:
 ```javascript
 export const App = () => {
 	return (
-		<>
-			<Header />
-			<Footer />
-		</>
+	<>
+		<Header />
+		<Footer />
+	</>
 	);
 );
 ```
