@@ -896,5 +896,113 @@ export const DrinkButtons = (props) => {
 };
 ```
 
+### 05. Conditionals
+Inside JSX we cannot use statements, we can only use expressions.    
+This results in limited syntax for conditial logic.    
+Conditional logic is very important for dinamic applications    
+(i.e. do not render serach result without a search term, empty components will crash the app)
 
+Solutions:  
+1. use conditional statement to render a component when there is data available
+2. use conditional statement inside the search result component to only try to use data when available
 
+#### Inside JSX
+Syntax: we embedd JS expressions in a `{}` block.   
+
+##### Using the __`&&` operator__ instead of __`if` statement__      
+ The left side of `&&` must be truthy for the right side expression to render.   
+(true && expression will evaluate to expression in JS &larr; falsy lhs will not render rhs)      
+```javascript
+export const App = () => {
+	const greeting = "Welcome to our cafe!";
+	const userDrink = undefined; //undefined as value is used only for representation 
+
+	return (
+		<div className="App">
+			<h1>{greeting}</h1>
+			<DrinkSearch availableDrinks={availableDrinks} />
+			{userDrink && (<DrinkChoice drink={userDrink} />)} // if lhs is truthy the component inside `()` will render
+		</div>
+	);
+};
+```
+
+##### In JSX we can use the ternary operator to replace the if else statement.    
+```javascript
+export const App = () => {
+	const greeting = "Welcome to our cafe!";
+	const userDrink = undefined; // undefined as value is used only for representation 
+
+	return (
+		<div className="App">
+			<h1>{greeting}</h1>
+			<DrinkSearch availableDrinks={availableDrinks} />
+			{userDrink ? (<DrinkChoice drink={userDrink} />) : "Please select a drink"}
+		</div>
+	);
+};
+```
+##### We can also use the ternary operator to dynamically switch between CSS classnames.		
+```javascript
+export const App = () => {
+	const greeting = "Welcome to our cafe!";
+	const userDrink = undefined; // undefined as value is used only for representation 
+
+	return (
+		<div className="App">
+			<h1 className={userDrink ? "small-header" : "big-header"}>{greeting}</h1> // makes the header small if user have selected a drink
+			<DrinkSearch availableDrinks={availableDrinks} />
+			{userDrink ? (<DrinkChoice drink={userDrink} />) : "Please select a drink"}
+		</div>
+	);
+};
+```
+
+#### Conditional return of JSX
+##### We can use an `if else` statement outside of the JSX code i.e. in a function	
+```javascript
+export const App = () => {
+	const greeting = "Welcome to our cafe!";
+	const userDrink = undefined; // undefined as value is used only for representation 
+
+	const userChoice = (drink) => { // this function returns either a component or a string
+		if (drink) {
+			return <DrinkChoice drink={drink}/>;
+		} else {
+				return "Please select a drink";
+		}
+	}
+
+	return (
+		<div className="App">
+			<h1 >{greeting}</h1>
+			<DrinkSearch availableDrinks={availableDrinks} />
+			{userChoice(userDrink)} // we can use the function inside the JSX
+		</div>
+	);
+};
+```
+##### We can create a component out of the above function
+```javascript
+// UserChoice component
+const UserChoice = (drink) => {
+	if (drink) {
+		return <DrinkChoice drink={drink}/>;
+	} else {
+			return "Please select a drink";
+	}
+};
+
+export const App = () => {
+	const greeting = "Welcome to our cafe!";
+	const userDrink = undefined; // undefined as value is used only for representation 
+
+	return (
+		<div className="App">
+			<h1 >{greeting}</h1>
+			<DrinkSearch availableDrinks={availableDrinks} />
+			<UserChoice drink={userDrink} /> // 
+		</div>
+	);
+};
+```
