@@ -1006,3 +1006,58 @@ export const App = () => {
 	);
 };
 ```
+
+### 06. State
+It is a collection of data that stores the state of a page, form or application    
+/Data is usually saved in the browser's cash &larr; this improves browsing experience (faster loading)/   
+
+- allows (with JS together) for an interactive and dynamic website
+- used to track and change states across multiple components (on single page apps)
+- state is linked to a single component, but can be updated by user actions inside other child components
+- state within a component helps to keep track of dynamic data (that can be changed by user action, timers, events: updates)
+- in a state we can keep track of any type of variable (string, boolean, etc.)
+- state comes with a function to change the state - in functional components this is done by __React hooks__
+- after every change in state React will re-render the component in question
+
+To be able to work with states, we need to import the React hook: __`useState`__ (from the React library)    
+```javascript
+import { useState } from 'react';
+
+export const DrinkButtons = () => {
+	const [selectedDrink, serSelectedDrink] = useState('Tea'); // selectedDrink is a state var with an init val of 'Tea'
+				// setSelectedDrink is a function to change the value of the state: selectedDrink
+	return (<p>Your choice: {selectDrink}</p>); // here we use the state variable to be displayed
+};
+```
+
+#### Stateful and Statless Components
+once we us state in a component it becomes a 'stateful' component / otherwise it is stateless    
+__A common pattern in React:__
+- a stateful component that maintains it's own state
+- state is passed down to child components
+- different components have diff purpose: some are handling logic, some are keeping track of state, others displaying contennt, etc.
+> it is useful to keep theese things separated (i.e.: UI comps &larr; displaying content &larr; no state tracking -- it would impede reusability)
+   
+```javascript
+import { useState } from 'react';
+
+// Stateful parent component
+export const FruitSelection = () => {
+	const [fruit, setFruits] = useState('Apple');
+
+	return (
+		<>
+			{fruit && <ShoppingCart content = {fruit} />}
+		</>
+	);
+};
+
+// Stateless child component
+export const ShoppingCart = ({fruit}) => {
+	return (<p>Shopping cart: {fruit}</p>);
+};
+```
+
+
+
+
