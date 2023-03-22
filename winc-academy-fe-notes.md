@@ -1058,6 +1058,27 @@ export const ShoppingCart = ({fruit}) => {
 };
 ```
 
+#### Using Multiple States
+
+- it is best practice to store simple values in the state of a component (do not put all the local state data in a single object)
+- for multiple values, use the useState hook multiple times for multiple variables
+```javascript
+import { useState } from 'react';
+
+export const GameScore = () => {
+	const [homeTeamScore, setHomeTeamScore] = useState(0);
+	const [visitorTeamScore, setVisitorTeamScore] = useState(0);
+
+	return (
+		<>
+			<p>Home: {homeTeamScore}</p>
+			<p>Visitor: {visitorTeamScore}</p>
+		</>
+	);
+};
+```
+
+#### Using Conditionals to Handle Empty States
 
 
 
