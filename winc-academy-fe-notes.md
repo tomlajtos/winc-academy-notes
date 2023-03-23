@@ -1089,10 +1089,33 @@ Example for conditional chaining:
 export const DrinkChoice = ({ drink }) => {
   return (
     <>
-      <p>{drink?.name}</p>
+      <p>{drink?.name}</p> // if drink name doesn't exixt &rArr; returns undefined
     </>
   );
 };
 ```
- 
+#### The Brackets: 
+When we declare a state variable it returns an array with two items
+- the first item of this array is the current state of the component
+- the second item is a function to change the value of the state  
+
+the `[ ]` in the example code is for array destructuring (more practical to use destr.):   
+```javascript
+const [drink, setDrink] = useState('Tea');
+
+// code above is technically the same as the code below
+const drinkStateVariable = useState('Tea'); // returns an array
+const drink = drinkStateVariable[0]; // firs array item
+const setDrink = drinkStateVariable[1]; // second array item
+```
+
+:bulb: the useState hook stores the components state outside the component.
+when the component re-renders it will not loose its state. &rArr; if we just declared
+a variable setDrink and re-assigned a new state value to that, the new value would be lost
+each time the component re-renders, because:  
+- the component is a JS function that returns JSX
+- the re-render will reset the variable's value to the initial one    
+
+
+
 
