@@ -44,10 +44,10 @@
 ### 07. Installing global npm packages
 - ? > `npm install -g package_name`
 - ? > run a package without installing it ==> use 'npx' i.e.: `npx package_name`
-		(download &larr; run &larr; remove)
+		(download __&rarr;__ run __&rarr;__ remove)
 ### 08. JavaScript projects
 #### 08.01. Initialize a project with npm
-- in project root &larr; `npm init` &larr; answer qs &larr; creates package.json (editable)
+- in project root __&rarr;__ `npm init` __&rarr;__ answer qs __&rarr;__ creates package.json (editable)
 
 #### 08.02. Add script for nodemon
 ```javascript
@@ -93,11 +93,11 @@
 
 ##### 08.04.02. npm version calculator // [link](https://semver.npmjs.com/)
 Query examples:
-- '^2.1.3' &larr; any version with the same main version (1st no.) and minor and patch versions are equal or higher
-- '~3.9.1' &larr; any verion within 3.9... patch number is equal or higher
-- '>=4.1.0' &larr; any version that are equal or higher incl. major/minor/patch
+- '^2.1.3' __&rarr;__ any version with the same main version (1st no.) and minor and patch versions are equal or higher
+- '~3.9.1' __&rarr;__ any verion within 3.9... patch number is equal or higher
+- '>=4.1.0' __&rarr;__ any version that are equal or higher incl. major/minor/patch
 - also based on the logic the following operators can be used too: >, <, <=
-- 1.0.0 - 3.0.0 &larr; exact range, icluding the lover and upper limits
+- 1.0.0 - 3.0.0 __&rarr;__ exact range, icluding the lover and upper limits
 
 ##### 08.04.03. Packages with a scope
 @scope_name/package_name
@@ -109,22 +109,22 @@ Query examples:
 ##### 08.05.01. Direct and Indirect Dependencies
 - direct: where the project's code directly imports from / installed
 - indirect (aka "transitive dependency"): package that is needed by another
-	dependency &larr; dep. relations can be represented by a dep. tree.
+	dependency __&rarr;__ dep. relations can be represented by a dep. tree.
 - ? > TO SHOW DEPENDENCY TREE: "npm list -all"
 
 ##### 08.05.02. Development dependnecies ("dev dependencies")
 - It is a dependency that is only needed during development. i.e.: formatter
-- ? > Install a dev. dep. : `npm install -save-dev{package_name}` &larr; this will
+- ? > Install a dev. dep. : `npm install -save-dev{package_name}` __&rarr;__ this will
 	list the dep under the devDependencies in package.json
 
 ##### 08.05.03. Role of package.json and package-lock.json and differences
 - ? > package.json: contains project metadata, configs and automation
 - ? > package-lock.json: describe indeirect and direct dependencies down to the
-		exact version number &larr; allows acurate rebuild without braking any code
+		exact version number __&rarr;__ allows acurate rebuild without braking any code
 
 ##### 08.05.04. npm ci (clean install)
 - to install a freshly downloaded project's dependencies
-- best way with the command `npm ci` &larr; install dependencies from package-lock.json
+- best way with the command `npm ci` __&rarr;__ install dependencies from package-lock.json
 	with the right version. [link](https://docs.npmjs.com/cli/v8/commands/npm-ci)
 
 #### 08.06. Evaluating 3rd party code licensing
@@ -132,12 +132,12 @@ Query examples:
 
 #### 08.07. Evaluating 3rd party code security
 (aka "Software Supply Chain Security")
-!!!&larr; npm packages have the risk potential to contain malwares, delete files or worse.
+!!!__&rarr;__ npm packages have the risk potential to contain malwares, delete files or worse.
 - npm install reports vulnerabilities
 - use reliable source
 - !!! wait with installig updates: couple days to see if there are problems
 	EXCEPT: security updates
-- npm audit: install package into an empty project and run 'npm audit' &larr; does a security scan [link](https://docs.npmjs.com/cli/v8/commands/npm-audit)
+- npm audit: install package into an empty project and run 'npm audit' __&rarr;__ does a security scan [link](https://docs.npmjs.com/cli/v8/commands/npm-audit)
 - use 3rd party security tools (i.e. Synk)
 
 #### 08.08. Updating dependnecies
@@ -145,7 +145,7 @@ Query examples:
 
 ### 09. Bundlers, buildtools and front-end toolchains
 #### 09.01. Bundling code
-- bundler will: analyze &larr; order &larr; sort &larr; combine the code &larr; send to browser
+- bundler will: analyze __&rarr;__ order __&rarr;__ sort __&rarr;__ combine the code __&rarr;__ send to browser
 - Bundlers can also bundle non-JavaScript code like CSS
 	* [Esbuild](https://esbuild.github.io/)
 	* [Rollup](https://rollupjs.org/guide/en/)
@@ -279,13 +279,13 @@ JS: use the status property of the response object
 ```
 
 #### Most used statuscodes:
-* 200 OK &larr; request handled successfuly
-* 201 Created &larr; successful request,
-* 401 Unauthorized &larr; request without or with wrong auth details
-* 403 Forbidden &larr; system sending the request is not authorized to read the resource or perform the operation on it
-* 404 Not Found &larr; esource the request was aiming at could not be found on the json-server
-* 429 Too Many Requests &larr; too many requests from the same source
-* 500 Internal Server Error &larr; backend has an unrecoverable problem while processing the request
+* 200 OK __&rarr;__ request handled successfuly
+* 201 Created __&rarr;__ successful request,
+* 401 Unauthorized __&rarr;__ request without or with wrong auth details
+* 403 Forbidden __&rarr;__ system sending the request is not authorized to read the resource or perform the operation on it
+* 404 Not Found __&rarr;__ esource the request was aiming at could not be found on the json-server
+* 429 Too Many Requests __&rarr;__ too many requests from the same source
+* 500 Internal Server Error __&rarr;__ backend has an unrecoverable problem while processing the request
 
 ### 07. Response body
 #### 07.01. POST method
@@ -406,7 +406,7 @@ FORMAT EXAMPLE:
 
 ##### Exercise: inspect headers in browser devtools
 - headers tab in network tab
-- same for Postman &larr; add custom header {key:value}
+- same for Postman __&rarr;__ add custom header {key:value}
 
 #### 08.06. Exercise: inspect headers in JavaScript
 - headers property of the response object is a headers object
@@ -481,7 +481,7 @@ fetchData();
 #### 10.04. Common Async Patterns
 ##### Pitfall of async code in JS:
 - `await` blocks the code until it is resolved so awaiting at the top level of our code is not a good idea, it is better to await things when it is actually needed
-- anything that depends on the result of await should be handled inside the async function itself. (with multiple, interdependent functions this can get complicated quickly &larr; everything is async)
+- anything that depends on the result of await should be handled inside the async function itself. (with multiple, interdependent functions this can get complicated quickly __&rarr;__ everything is async)
   
 ##### Avoid having async functions everywhere:
 __Inversion of control__:   
@@ -498,8 +498,8 @@ The sync and async code should be separated as much as possible. The rest of the
 that has nothing to do with the async data should run independently. >> DO NOT await   
 async code at the top level (EXECEPTION EXIST).   
 
-All the awaiting happens inside the async function which is not awaited itself &larr; as soon it hits an await the the control flow is handeled back to wherever the      
-async function was called &larr; rest of the code continues to execute (concept - EVENT LOOP)   
+All the awaiting happens inside the async function which is not awaited itself __&rarr;__ as soon it hits an await the the control flow is handeled back to wherever the      
+async function was called __&rarr;__ rest of the code continues to execute (concept - EVENT LOOP)   
 
 ##### Successive async function calls (async code depends on other async code)
 i.e.: make request based on prev requested data   
@@ -511,7 +511,7 @@ async function handlePosts() {
 }
 ```
 
-##### Multiple independent async code &larr; paralel requests >> do not await them in succession
+##### Multiple independent async code __&rarr;__ paralel requests >> do not await them in succession
 i.e.:   
 ```javascript
 async function handlePosts() {
@@ -547,7 +547,7 @@ async function handleRequests() {
 	}
 
 	await Promise.all([ // takes an array of promisses and resolvs when all of them are resolved
-	handlePosts(),    // returns a single promise, aggregating the results of multiple promisses &larr; used with relaterd promisses
+	handlePosts(),    // returns a single promise, aggregating the results of multiple promisses __&rarr;__ used with relaterd promisses
 	handleFriends(),
 	]);
 }
@@ -588,7 +588,7 @@ const amILucky = new Promise((resolve, reject) => {
 });
 ```
 there is a specific way to define what happens when a p. is fulfilled or rejected:   
-1. .then() method &larr; takes the Promise value as its argument   
+1. .then() method __&rarr;__ takes the Promise value as its argument   
 	 ```javascript
 	 amILucky.then((fulfilledValue) => console.log(fulfilledValue));
 	 ```
@@ -686,7 +686,7 @@ components use JSX (JS XML) which is an extension to JS - combines parts of HTML
 higher version of DOM - it can be uploaded independently of the real DOM   
 it is not able to make changes on the screen (it has all the props as the real DOM however)   
 
-if change in React &larr; new version of V-DOM &larr; periodically compared to the real DOM and updates whenever    
+if change in React __&rarr;__ new version of V-DOM __&rarr;__ periodically compared to the real DOM and updates whenever    
 there is a diff === RECONCILIATION   
 
 #### Other frameworks:
@@ -789,7 +789,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(  // define root DOM
 );
 ```
 - everything inside root is handled by React (almost always a single root DOM node / React app)   
-- `render()` &larr; to render a React element:   
+- `render()` __&rarr;__ to render a React element:   
 	* pass the root DOM element (`document.getElementById('root')` to `ReactDOM.createRoot()`
 	* then use the __render function__ on this root element   
 - the React DOM uses a Virtual DOM   
@@ -797,7 +797,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(  // define root DOM
 	* can be updated without effecting the DOM
 	* contains the sam properties, but it can't make changes on the screen   
 	* React detects the elements that were changed and updates the DOM (uncanged DOM elements will not render again)
-  > change in React &larr; V-DOM render &larr; React compares V-DOM and DOM periodically &larr; when diff. DOM is updated (reconciliation process)   
+  > change in React __&rarr;__ V-DOM render __&rarr;__ React compares V-DOM and DOM periodically __&rarr;__ when diff. DOM is updated (reconciliation process)   
 
 #### Components
 A React app consists of many different components.     
@@ -911,7 +911,7 @@ Syntax: we embedd JS expressions in a `{}` block.
 
 ##### Using the __`&&` operator__ instead of __`if` statement__      
  The left side of `&&` must be truthy for the right side expression to render.   
-(true && expression will evaluate to expression in JS &larr; falsy lhs will not render rhs)      
+(true && expression will evaluate to expression in JS __&rarr;__ falsy lhs will not render rhs)      
 ```javascript
 export const App = () => {
 	const greeting = "Welcome to our cafe!";
@@ -1009,7 +1009,7 @@ export const App = () => {
 
 ### 06. State
 It is a collection of data that stores the state of a page, form or application    
-/Data is usually saved in the browser's cash &larr; this improves browsing experience (faster loading)/   
+/Data is usually saved in the browser's cash __&rarr;__ this improves browsing experience (faster loading)/   
 
 - allows (with JS together) for an interactive and dynamic website
 - used to track and change states across multiple components (on single page apps)
@@ -1036,7 +1036,7 @@ __A common pattern in React:__
 - a stateful component that maintains it's own state
 - state is passed down to child components
 - different components have diff purpose: some are handling logic, some are keeping track of state, others displaying contennt, etc.
-> it is useful to keep theese things separated (i.e.: UI comps &larr; displaying content &larr; no state tracking -- it would impede reusability)
+> it is useful to keep theese things separated (i.e.: UI comps __&rarr;__ displaying content __&rarr;__ no state tracking -- it would impede reusability)
    
 ```javascript
 import { useState } from 'react';
@@ -1079,6 +1079,20 @@ export const GameScore = () => {
 ```
 
 #### Using Conditionals to Handle Empty States
+it is common practice to pass state as prop from one component to another   
+> __!__ stat might not be the object that the component expects __&rarr;__ TypeError. I.e.: you pass an empty state and data is expected. This could also happen when component gets rendered before receiving the data    
 
-
+A __conditional statement__ can be a solution to this (se code snippets of stateful/stateless components as an exemple to this as well)
+Another way to handle potential empty states is using __optional chaining_. (used with object wich might or might not have a certain key that weare trying to access. __&rarr;__ instead of throwing an error it will return an 'undefined' and the app will not stop working.   
+Example for conditional chaining:    
+```javascript
+export const DrinkChoice = ({ drink }) => {
+	return (
+		<>
+			<p>{drink?.name}</p>
+		</>
+	);
+};
+```
+ 
 
