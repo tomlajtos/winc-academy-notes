@@ -1094,7 +1094,7 @@ export const DrinkChoice = ({ drink }) => {
   );
 };
 ```
-#### The Brackets: 
+#### The Brackets 
 When we declare a state variable it returns an array with two items
 - the first item of this array is the current state of the component
 - the second item is a function to change the value of the state  
@@ -1109,13 +1109,48 @@ const drink = drinkStateVariable[0]; // firs array item
 const setDrink = drinkStateVariable[1]; // second array item
 ```
 
-> :bulb: the useState hook stores the components state outside the component.
-> When the component re-renders it will not loose its state this way &rArr; if we just declared
-> a variable `setDrink` and re-assigned a new state value to that, the new value would be lost
-> when the component re-renders, because:  
+> :bulb: the useState hook stores the components state outside the component. When the component re-renders it will not loose its state this way &rArr; if we just declared a variable `setDrink` and re-assigned a new state value to that, the new value would be lost when the component re-renders, because:  
 > - the component is a JS function that returns JSX which is called on re-render
 > - the re-render will reset the variable's value to the initial one    
 > - any value that was given after the initial declaration will be lost
+
+#### Lifting State Up
+used when a state is implemented in a component, but we need it in another or multiple sibling component(s)      
+  &dArr;   
+we can "lift the state up" to the sibling component's closest common ancestor    
+  &dArr;   
+then, we can pass the state variable and/or function as props to the child components    
+Example code:   
+```javascript
+// implementing the state inside <DrinkButtons/> first
+import { useState } from 'react';
+
+export const DrinkButtons = () => {
+  const [selectedDrink, setSelectedDrink] = useState('Tea');
+
+  return (<p>Your choice: {setSelectedDrink}</p>);
+
+// lifting the state up (<App/>, parent component)
+
+export const App = () => {
+  const [userDrink, setUserDrink] = useState('Coffee'); // state is moved from <DrinkButtons/> to <App/>
+  const greeting = 'Welcome to our cafe!';
+
+  return (
+    <div className="app">
+      <h1>{greeting}</h1>
+      <DrinkButtons selectDrink={setUserDrink} />  // passing setUserDrink as prop to <DrinkButtons/>
+      {userDrink && <DrinkChoice drink={userDrink} />}
+    </div>
+  );
+};
+```
+The `<App/>` is now stateful and passes its state to their stateless children components: `<DrinkButtons/>` and `<DrinkChoice/>`.   
+
+#### Colocating State
+
+
+
 
 
 
