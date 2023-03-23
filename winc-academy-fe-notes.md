@@ -26,7 +26,7 @@
 - ? > list - `ls/ ls -l/ -ls -la`
 - ? > change directory - cd 'dirname' / cd ..
 - ? > create directory - mkdir
-- ? > delete directory - rmdir (only if it is empty) / rm -rf dir !!
+- ? > delete directory - rmdir (only if it is empty) / rm -rf dir :warning: permanent action
 - ? > create a file - touch 'filename'
 - ? > remove a file - rm 'filename'
 - ? >
@@ -77,11 +77,11 @@
 - ? > import from ES module -- `import { item1, item2, item3 } from "./moduleName.js";`
 
 ##### 08.03.03. Using ESM and CommonJS in one project (ESM only is advised)
-// !ONLY imports CommonJS modules into ES modules (doesn't work the other way)
+:warning: ONLY imports CommonJS modules into ES modules (doesn't work the other way)
 - in package.json
 	`"type": "module",`
 - CommonJS module file extension is: fileName.cjs
-- import statement in ESM needs to point to the full path of the module.cjs, extension included!
+- import statement in ESM needs to point to the full path of the module.cjs, :warning: extension included 
 - tools to help with managing this: i.e. Babel
 
 #### 08.04.  Package versions and scoped packages
@@ -132,10 +132,10 @@ Query examples:
 
 #### 08.07. Evaluating 3rd party code security
 (aka "Software Supply Chain Security")
-!!!__&rArr;__ npm packages have the risk potential to contain malwares, delete files or worse.
+:warning:__&rArr;__ npm packages have the potential risk to contain malwares, delete files or worse.
 - npm install reports vulnerabilities
 - use reliable source
-- !!! wait with installig updates: couple days to see if there are problems
+- :warning: wait with installig updates: couple days to see if there are problems
 	EXCEPT: security updates
 - npm audit: install package into an empty project and run 'npm audit' __&rArr;__ does a security scan [link](https://docs.npmjs.com/cli/v8/commands/npm-audit)
 - use 3rd party security tools (i.e. Synk)
@@ -250,7 +250,7 @@ use restournat.json >> json-server >> endpoints: localhost:3000/menu, /tables, /
 ### 05. Methods
 - A request method is part of an HTTP request > 1 method/request
 - Methods are allways written in uppercase letters
-! the way a backend uses the methods can vary >> READ THE DOCS to know the exact way
+:warning: the way a backend uses the methods can vary >> READ THE DOCS to know the exact way
 [more info](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
 
 #### 05.01. GET (= read) & DELETE
@@ -316,7 +316,7 @@ Opton obj for `fetch` should include:
 - a body
 - a specific header
 
-* !Can't add a body to a GET with fetch (query params included in the query part of the URL)
+* :warning: Can't add a body to a GET with fetch (query params included in the query part of the URL)
 FORMAT EXAMPLE:
 ```javascript
   fetch("URL", {
@@ -492,7 +492,7 @@ async function handleData() {
 	showData(data); // synchronous function, async spreading is stopped
 }
 ```
-It is important to contain async code!   
+:warning: It is important to contain async code   
 
 The sync and async code should be separated as much as possible. The rest of the code   
 that has nothing to do with the async data should run independently. >> DO NOT await   
@@ -557,7 +557,7 @@ async function handleRequests() {
 ##### Top level await
 It is possible to awati at the top level of a JS module, __HOWEVER__:   
 - a module with top level await will be awaited by other modules when they import it so it sort of blocks the execution (other imported synchronous modules will run tho)
-__!!!Only use top level await in modules that are strictly used for fetching some data and exporting it, and never place synchronous code after your asynchronous code when using top-level await (unless you need the result of the asynchronous code).__   
+:warning: __Only use top level await in modules that are strictly used for fetching some data and exporting it, and never place synchronous code after your asynchronous code when using top-level await (unless you need the result of the asynchronous code).__   
 
 EXTRA RESOURCES for async/await:   
 - [Async function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
@@ -627,7 +627,7 @@ and their execution also depends on the state of the JS callstack. >> can get co
 [MDN - event loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)   
 
 ### 13. Render API response in DOM
-![figure application (fe &harr; be)](./winc-fe-notes-figures/application.png)   
+![figure application (fe &hArr; be)](./winc-fe-notes-figures/application.png)   
 
 __good place to start where the least connections & interdependencies are between the diff parts__   
 - not a lot of other code is needed for this part and testing is easier too
@@ -648,7 +648,7 @@ When all that is done, focus on code for when things go wrong:
 
 Happy path in the diagram: app logic/business rules w/o validation, IO without catching errors   
 
-! check if th code is woring before and after adding new features to it   
+:warning: check if the code is woring before and after adding new features to it   
 
 ? END DETOUR ?   
 
@@ -824,7 +824,7 @@ It is possible to render a component inside another component
 ```javascript
 import './App.css';
 
-const Button = () => {  // define a Button component within the same file (can also be imported, !name is capitalized by conv.
+const Button = () => {  // define a Button component within the same file (can also be imported, :warning: name is capitalized by conv.
 	return (
 		<button className="Button">Press me!</button>  // note: className (because 'class' is a reserved word in JS)
 	);
@@ -843,7 +843,7 @@ export const App = () => {
 ```
 
 #### Fragment
-__! in React only one element can be returned from a component__   
+:warning: __in React only one element can be returned from a component__   
 SOLUTION: wrap components in a container such as `<div>` or in a __React Fragment__   
 Fragment syntax: `<React.Fragment>...</React.Fragment>` or `<>...</>`   
 Example:
