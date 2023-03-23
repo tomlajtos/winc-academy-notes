@@ -1109,12 +1109,13 @@ const drink = drinkStateVariable[0]; // firs array item
 const setDrink = drinkStateVariable[1]; // second array item
 ```
 
-:bulb: the useState hook stores the components state outside the component.
-when the component re-renders it will not loose its state. &rArr; if we just declared
-a variable setDrink and re-assigned a new state value to that, the new value would be lost
-each time the component re-renders, because:  
-- the component is a JS function that returns JSX
-- the re-render will reset the variable's value to the initial one    
+> :bulb: the useState hook stores the components state outside the component.
+> When the component re-renders it will not loose its state this way &rArr; if we just declared
+> a variable `setDrink` and re-assigned a new state value to that, the new value would be lost
+> when the component re-renders, because:  
+> - the component is a JS function that returns JSX which is called on re-render
+> - the re-render will reset the variable's value to the initial one    
+> - any value that was given after the initial declaration will be lost
 
 
 
