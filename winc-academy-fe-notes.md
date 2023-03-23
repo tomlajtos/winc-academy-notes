@@ -44,7 +44,7 @@
 ### 07. Installing global npm packages
 - ? > `npm install -g package_name`
 - ? > run a package without installing it ==> use 'npx' i.e.: `npx package_name`
-		(download __&rArr;__ run __&rArr;__ remove)
+    (download __&rArr;__ run __&rArr;__ remove)
 ### 08. JavaScript projects
 #### 08.01. Initialize a project with npm
 - in project root __&rArr;__ `npm init` __&rArr;__ answer qs __&rArr;__ creates package.json (editable)
@@ -79,7 +79,7 @@
 ##### 08.03.03. Using ESM and CommonJS in one project (ESM only is advised)
 :warning: ONLY imports CommonJS modules into ES modules (doesn't work the other way)
 - in package.json
-	`"type": "module",`
+  `"type": "module",`
 - CommonJS module file extension is: fileName.cjs
 - import statement in ESM needs to point to the full path of the module.cjs, :warning: extension included 
 - tools to help with managing this: i.e. Babel
@@ -103,29 +103,29 @@ Query examples:
 @scope_name/package_name
 - sometimes used by organizations - "@ibm/motion"
 - or to group packages - i.e. "@storybook/"
-	Advantage: easier naming of npm packages, any name can be used within a scope
+  Advantage: easier naming of npm packages, any name can be used within a scope
 
 #### 08.05. Third Party Dependencies
 ##### 08.05.01. Direct and Indirect Dependencies
 - direct: where the project's code directly imports from / installed
 - indirect (aka "transitive dependency"): package that is needed by another
-	dependency __&rArr;__ dep. relations can be represented by a dep. tree.
+  dependency __&rArr;__ dep. relations can be represented by a dep. tree.
 - ? > TO SHOW DEPENDENCY TREE: "npm list -all"
 
 ##### 08.05.02. Development dependnecies ("dev dependencies")
 - It is a dependency that is only needed during development. i.e.: formatter
 - ? > Install a dev. dep. : `npm install -save-dev{package_name}` __&rArr;__ this will
-	list the dep under the devDependencies in package.json
+  list the dep under the devDependencies in package.json
 
 ##### 08.05.03. Role of package.json and package-lock.json and differences
 - ? > package.json: contains project metadata, configs and automation
 - ? > package-lock.json: describe indeirect and direct dependencies down to the
-		exact version number __&rArr;__ allows acurate rebuild without braking any code
+    exact version number __&rArr;__ allows acurate rebuild without braking any code
 
 ##### 08.05.04. npm ci (clean install)
 - to install a freshly downloaded project's dependencies
 - best way with the command `npm ci` __&rArr;__ install dependencies from package-lock.json
-	with the right version. [link](https://docs.npmjs.com/cli/v8/commands/npm-ci)
+  with the right version. [link](https://docs.npmjs.com/cli/v8/commands/npm-ci)
 
 #### 08.06. Evaluating 3rd party code licensing
   conditions of oss/os project use is described in the project license (MIT etc.)
@@ -136,7 +136,7 @@ Query examples:
 - npm install reports vulnerabilities
 - use reliable source
 - :warning: wait with installig updates: couple days to see if there are problems
-	EXCEPT: security updates
+  EXCEPT: security updates
 - npm audit: install package into an empty project and run 'npm audit' __&rArr;__ does a security scan [link](https://docs.npmjs.com/cli/v8/commands/npm-audit)
 - use 3rd party security tools (i.e. Synk)
 
@@ -147,33 +147,33 @@ Query examples:
 #### 09.01. Bundling code
 - bundler will: analyze __&rArr;__ order __&rArr;__ sort __&rArr;__ combine the code __&rArr;__ send to browser
 - Bundlers can also bundle non-JavaScript code like CSS
-	* [Esbuild](https://esbuild.github.io/)
-	* [Rollup](https://rollupjs.org/guide/en/)
-	* [Webpack](https://webpack.js.org/)
+  * [Esbuild](https://esbuild.github.io/)
+  * [Rollup](https://rollupjs.org/guide/en/)
+  * [Webpack](https://webpack.js.org/)
 
 #### 09.02. Compilatoin
   - converting code into output files (Sass >> CSS, TypeScript >> JS)
 
 #### 09.03. Transpilation (source-to-source transpilation)
 - rocess of taking code written using certain language constructs and converting it
-	into code that does the same but uses different language construct
-	i.e. ESM to CommonJS, or ES6 >> old JS for old browsers, Node >> browser
+  into code that does the same but uses different language construct
+  i.e. ESM to CommonJS, or ES6 >> old JS for old browsers, Node >> browser
 
 #### 09.04. Polyfilling (and code instead of transforming /like transpilation/)
 - makes functionality available by adding code
-	i.e. [js-temporal_polyfill](https://www.npmjs.com/package/@js-temporal/polyfill)
+  i.e. [js-temporal_polyfill](https://www.npmjs.com/package/@js-temporal/polyfill)
 
 - XTRA-info: [link](https://javascript.info/polyfills)
 - TOOLS for compilation and transpilation:
-	* [Sass compiler](https://www.npmjs.com/package/sass)
-	* [TypeScript compiler](https://www.npmjs.com/package/typescript)
-	* [Babel](https://babeljs.io/)
-	* [Webpack](https://webpack.js.org/)
+  * [Sass compiler](https://www.npmjs.com/package/sass)
+  * [TypeScript compiler](https://www.npmjs.com/package/typescript)
+  * [Babel](https://babeljs.io/)
+  * [Webpack](https://webpack.js.org/)
 
 #### 09.05. Image processing/optimization
 - for website optimization (resize, crop) images need to be as light as possible
 - Tools:
-	* [imagemin package](https://github.com/imagemin/imagemin)
+  * [imagemin package](https://github.com/imagemin/imagemin)
 
 #### 09.06. Serving during development (dev server)
   - serv website and other project locally
@@ -182,16 +182,16 @@ Query examples:
 #### 09.07. Ttoolchains
 - combination of tools configured to work together
 - e.i. by popularity:
-	* [Vite](https://vitejs.dev/)
-	* [Parcer](https://parceljs.org/)
-	* [Rome](https://rome.tools/)
-	* [WMR](https://wmr.dev/)
+  * [Vite](https://vitejs.dev/)
+  * [Parcer](https://parceljs.org/)
+  * [Rome](https://rome.tools/)
+  * [WMR](https://wmr.dev/)
 
 ### 10. Version control
 ### 11. Version control bsics
 - git
 - web service to host repositories online: Github
-	alt: Gitlab, Gitea
+  alt: Gitlab, Gitea
 
 ### 12. Git on the computer / local repo
 
@@ -259,11 +259,11 @@ use restournat.json >> json-server >> endpoints: localhost:3000/menu, /tables, /
 - response is some data or an error if the backend does not now the request (> status codes)
 In JS inside an `async` function >> i.e.:
 ```javascript
-	const sendRequest = async() => {
-		const response = await fetch("URL",{options_obj}); //*
-		const json = await response.json();
-		return json;
-	};
+  const sendRequest = async() => {
+    const response = await fetch("URL",{options_obj}); //*
+    const json = await response.json();
+    return json;
+  };
 ```
 * \*options_object: i.e.: `{method: "DELETE"}` >> `GET` if no options object
 
@@ -274,8 +274,8 @@ In JS inside an `async` function >> i.e.:
   i.e.: '200 OK' or '404 Not Found'
 JS: use the status property of the response object   
 ```javascript
-	const response = await fetch("http://localhost:3000/menu/5");
-	console.log(response.status); //200
+  const response = await fetch("http://localhost:3000/menu/5");
+  console.log(response.status); //200
 ```
 
 #### Most used statuscodes:
@@ -414,7 +414,7 @@ FORMAT EXAMPLE:
 ```javascript
 const response = await fetch("http://localhost:3000");
 for (const [header, value] of response.headers.entries()) {
-	console.log(`${header}: ${value}`);
+  console.log(`${header}: ${value}`);
 }
 ```
 - check if a specific header exists(.has), check header value(.get):   
@@ -423,7 +423,7 @@ const response = await fetch("http://localhost:3000/tables");
 const headers = response.headers;
 let contentType;
 if (headers.has("content-type")) {
-	contentType = headers.get("content-type");
+  contentType = headers.get("content-type");
 }
 console.log(contentType); //application/json: charset=utf-8
 ```
@@ -436,8 +436,8 @@ const options = {};
 options.method = "POST";
 options.body = JSON.sringify(body);
 options.headers = {
-	Expires: "Thu, 2 Dec 2023 10:43:00 GMT",
-	"Content-Type": "application/json;charset=utf-8",
+  Expires: "Thu, 2 Dec 2023 10:43:00 GMT",
+  "Content-Type": "application/json;charset=utf-8",
 };
 fetch(url, options);
 ```
@@ -447,7 +447,7 @@ use syntax from above to add header to request body - inside options object for 
 ### 09. Separating business logic from UI and IO
 - better readability
 - better maintainability   
-	i.e. makes adding new logic easier, debugging easier etc.
+  i.e. makes adding new logic easier, debugging easier etc.
 - makes switching frameworks easier
 - makes writing tests easier (separate test for IO, UI, b. logic)
 
@@ -457,7 +457,7 @@ use syntax from above to add header to request body - inside options object for 
 i.e:   
 ```javascript
 async function getData() { //asynchronous function declaration
-	return 42;
+  return 42;
 }
 
 const data = await getData(); // data is 42;
@@ -467,13 +467,13 @@ for server requestsi, the fetch method has to be wrapped in an async function,
 and the response has to be awaited. Also, each async function has to be awaited:   
 ```javascript
 async function fetchData() {
-	try {
-		const response = await fetch('http://localhost:3000/todo');
-		const todos = await response.json();
-		console.table(todos);
-	} catch (error) {
-		console.error('no todos found');
-	}
+  try {
+    const response = await fetch('http://localhost:3000/todo');
+    const todos = await response.json();
+    console.table(todos);
+  } catch (error) {
+    console.error('no todos found');
+  }
 }
 fetchData();
 ```
@@ -488,8 +488,8 @@ __Inversion of control__:
 instead of caller function we let the async function handle the result from the asynchronous code. i.e.:     
 ```javascript
 async function handleData() {
-	const data = await fetchData();
-	showData(data); // synchronous function, async spreading is stopped
+  const data = await fetchData();
+  showData(data); // synchronous function, async spreading is stopped
 }
 ```
 :warning: It is important to contain async code   
@@ -505,9 +505,9 @@ async function was called __&rArr;__ rest of the code continues to execute (conc
 i.e.: make request based on prev requested data   
 ```javascript
 async function handlePosts() {
-	const user = await fetchUser();
-	cosnt posts = await fetchPosts(user.id);
-	showPosts(posts); // regular sync function
+  const user = await fetchUser();
+  cosnt posts = await fetchPosts(user.id);
+  showPosts(posts); // regular sync function
 }
 ```
 
@@ -515,14 +515,14 @@ async function handlePosts() {
 i.e.:   
 ```javascript
 async function handlePosts() {
-	const asyncFriends = fetchFriends(); // no await
-	cosnt asyncPosts = fetchPosts(user.id); // no await
-	// both requests have been fired
+  const asyncFriends = fetchFriends(); // no await
+  cosnt asyncPosts = fetchPosts(user.id); // no await
+  // both requests have been fired
 
-	// await the posts
-	showPosts(await asyncPosts);
-	// await friends
-	showFriends(await asyncFriends);
+  // await the posts
+  showPosts(await asyncPosts);
+  // await friends
+  showFriends(await asyncFriends);
 }
 ```
 The fetche's result (a promise) is stored in a constant.      
@@ -536,20 +536,20 @@ We can keep a reference to the Promise and await it later on
 
 ```javascript
 async function handleRequests() {
-	async function hadleFriends() {
-	const friends = await fetchFriends();
-	showFriends(friends);
-	}
+  async function hadleFriends() {
+  const friends = await fetchFriends();
+  showFriends(friends);
+  }
 
-	async function handlePosts() {
-	const posts = await fetchPosts();
-	showPosts(posts);
-	}
+  async function handlePosts() {
+  const posts = await fetchPosts();
+  showPosts(posts);
+  }
 
-	await Promise.all([ // takes an array of promisses and resolvs when all of them are resolved
-	handlePosts(),    // returns a single promise, aggregating the results of multiple promisses __&rArr;__ used with relaterd promisses
-	handleFriends(),
-	]);
+  await Promise.all([ // takes an array of promisses and resolvs when all of them are resolved
+  handlePosts(),    // returns a single promise, aggregating the results of multiple promisses __&rArr;__ used with relaterd promisses
+  handleFriends(),
+  ]);
 }
 ```
 [more about Promise.all](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)
@@ -581,32 +581,32 @@ They can be created in multiple ways:
 
 ```javascript
 const amILucky = new Promise((resolve, reject) => {
-	if (Math.random() < 0.99) {
-		reject(new Error('You ain't lucky'));
-	}
-	resolve('You're lucky!);
+  if (Math.random() < 0.99) {
+    reject(new Error('You ain't lucky'));
+  }
+  resolve('You're lucky!);
 });
 ```
 there is a specific way to define what happens when a p. is fulfilled or rejected:   
 1. .then() method __&rArr;__ takes the Promise value as its argument   
-	 ```javascript
-	 amILucky.then((fulfilledValue) => console.log(fulfilledValue));
-	 ```
+   ```javascript
+   amILucky.then((fulfilledValue) => console.log(fulfilledValue));
+   ```
 2. handling errors can be done in two ways: using .then() or using .catch():   
-	 ```javascript
-	 amILucky
-		.then((fulfilledValue) => console.log(fulfilledValue));
-		.catch((error) => console.log('some message', error));
-	 ```
+   ```javascript
+   amILucky
+    .then((fulfilledValue) => console.log(fulfilledValue));
+    .catch((error) => console.log('some message', error));
+   ```
 #### Chaining Promises
 both .then() and .catch() return new promises > so we can chain several of them together   
 This allows for complex code i.e. performing several requests in succession.   
 
 ```javascript
 fetch('http://localhost:3000/todo')
-	.then(response => response.json())
-	.then(todos => console.table(todos))
-	.catch(error => console.error('no todos found!'));
+  .then(response => response.json())
+  .then(todos => console.table(todos))
+  .catch(error => console.error('no todos found!'));
 ```
 
 [Promises - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)   
@@ -617,7 +617,7 @@ fetch('http://localhost:3000/todo')
 - The most simple example is the setTimeout() function > schedules code, code runs after set time, time unit is ms.
 ```javascript
 setTimeout(() => {
-	alert('at least 1 second has passed');
+  alert('at least 1 second has passed');
 }, 1000);
 ```
 - but also there are requestAnimationTimeframe and micro tasks which get executed in different times in relation to the browser page-rendering
@@ -713,11 +713,11 @@ etc.
 5. `pnpm eslint --init` => set up Eslint
 6. edit `eslintrc` >> 
 
-	```javascript
-	"rules": {
-		"react/prop-types":0
-	}
-	```
+  ```javascript
+  "rules": {
+    "react/prop-types":0
+  }
+  ```
 
 7. `src/App.js` is the file that's running a code at --localhost 
 
@@ -725,7 +725,7 @@ etc.
 can be done based on <u>types</u>, features, pages, etc.   
 
 - create a `components` folder inside `src` (for reusable comps) 
-	/some comps have child-parent realationship - these can be grouped in a folder inside `components`
+  /some comps have child-parent realationship - these can be grouped in a folder inside `components`
 - all generic UI comps will be grouped in a `ui` folder
 - `pages` folder for page files, can add sub-folders for pages storing the page components, 1xuse comps
 
@@ -759,16 +759,16 @@ Example code of a simple component:
 import './App.css';
 
 function App() {
-	const greeting = "Hi, this is an app made with React"; // variables defined outside the `return()`
-	const description = <p>I think it holds an interestig future</p>;
+  const greeting = "Hi, this is an app made with React"; // variables defined outside the `return()`
+  const description = <p>I think it holds an interestig future</p>;
 
-	return (
-		<div className="App">
-			<h1> Welcome! </h1>
-			<p>{greeting}</p> // variable is a string which will be the content within the `<p>` tags
-			{description} // tags saved in the variable, injecting the variable here without any tags
-		</div>
-	);
+  return (
+    <div className="App">
+      <h1> Welcome! </h1>
+      <p>{greeting}</p> // variable is a string which will be the content within the `<p>` tags
+      {description} // tags saved in the variable, injecting the variable here without any tags
+    </div>
+  );
 }
 
 export default App;
@@ -783,20 +783,20 @@ React uses a render function that takes two arguments: HTML code and an HTML ele
 It is to display HTML code inside the specified HTML element. I.e.: (from my-first-app/src/main.jsx)      
 ```javascript
 ReactDOM.createRoot(document.getElementById('root')).render(  // define root DOM node
-	<React.StrictMode>
-		<App />
-	</React.StrictMode>,
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
 );
 ```
 - everything inside root is handled by React (almost always a single root DOM node / React app)   
 - `render()` __&rArr;__ to render a React element:   
-	* pass the root DOM element (`document.getElementById('root')` to `ReactDOM.createRoot()`
-	* then use the __render function__ on this root element   
+  * pass the root DOM element (`document.getElementById('root')` to `ReactDOM.createRoot()`
+  * then use the __render function__ on this root element   
 - the React DOM uses a Virtual DOM   
-	* the V-DOM is a lighter, in memory version of the DOM
-	* can be updated without effecting the DOM
-	* contains the sam properties, but it can't make changes on the screen   
-	* React detects the elements that were changed and updates the DOM (uncanged DOM elements will not render again)
+  * the V-DOM is a lighter, in memory version of the DOM
+  * can be updated without effecting the DOM
+  * contains the sam properties, but it can't make changes on the screen   
+  * React detects the elements that were changed and updates the DOM (uncanged DOM elements will not render again)
   > change in React __&rArr;__ V-DOM render __&rArr;__ React compares V-DOM and DOM periodically __&rArr;__ when diff. DOM is updated (reconciliation process)   
 
 #### Components
@@ -810,13 +810,13 @@ Example for a __React Function Component__:
 import './App.css';  // import styles
 
 export const App = () => {  // export App component
-	const hello = "Hello Wincer!"; 
+  const hello = "Hello Wincer!"; 
 
   return (  // return JSX
-		<main>
-			<h1>{hello}</h1> // inject JS code by wrapping the variable name in {}, the value will render as an <h1>
-		</main>
-	);
+    <main>
+      <h1>{hello}</h1> // inject JS code by wrapping the variable name in {}, the value will render as an <h1>
+    </main>
+  );
 };
 ```
 
@@ -825,20 +825,20 @@ It is possible to render a component inside another component
 import './App.css';
 
 const Button = () => {  // define a Button component within the same file (can also be imported, :warning: name is capitalized by conv.
-	return (
-		<button className="Button">Press me!</button>  // note: className (because 'class' is a reserved word in JS)
-	);
+  return (
+    <button className="Button">Press me!</button>  // note: className (because 'class' is a reserved word in JS)
+  );
 };
 
 export const App = () => {
   const hello = "Hello Wincer!";
 
-	return (
-		<main>
-			<h1>{hello}</h1>
-			<Button />  // to use inside "App", wrap "Button" in < /> when adding it to the JSX code, note: capitalized name to ditinguish from <button>
-		</main>
-	);
+  return (
+    <main>
+      <h1>{hello}</h1>
+      <Button />  // to use inside "App", wrap "Button" in < /> when adding it to the JSX code, note: capitalized name to ditinguish from <button>
+    </main>
+  );
 };
 ```
 
@@ -849,12 +849,12 @@ Fragment syntax: `<React.Fragment>...</React.Fragment>` or `<>...</>`
 Example:
 ```javascript
 export const App = () => {
-	return (
+  return (
     <>
       <Header />
       <Footer />
     </>
-	);
+  );
 };
 ```
 
@@ -867,15 +867,15 @@ when rendering a component, pass props with HTML attr. like syntax.
 Example code for passing props to components:   
 ```javascript
 export const App = () => {
-	const greeting = "Welcome to our cafe!";
-	const coffee = "Coffee";
+  const greeting = "Welcome to our cafe!";
+  const coffee = "Coffee";
 
-	return (
-		<div className="App">
-			<h1>{greeting}</h1>
-			<DrinkButtons drinkOne={"Tea"} drinkTwo={coffee} />
-		</div>
-	);
+  return (
+    <div className="App">
+      <h1>{greeting}</h1>
+      <DrinkButtons drinkOne={"Tea"} drinkTwo={coffee} />
+    </div>
+  );
 };
 ```
 
@@ -884,15 +884,15 @@ props are esentially JS objects, we can access them by creating the parameter __
 Example code for using prop inside components:
 ```javascript
 export const DrinkButtons = (props) => {
-	return (
-		<>
-			<h2>Would you like tea or coffee?</h2>
-			<div className="button-group">
-				<button className="button">{props.drinkOne}</button>
-				<button className="button">{props.drinkTwo}</button>
-			</div>
-		</>
-	);
+  return (
+    <>
+      <h2>Would you like tea or coffee?</h2>
+      <div className="button-group">
+        <button className="button">{props.drinkOne}</button>
+        <button className="button">{props.drinkTwo}</button>
+      </div>
+    </>
+  );
 };
 ```
 
@@ -914,96 +914,96 @@ Syntax: we embedd JS expressions in a `{}` block.
 (true && expression will evaluate to expression in JS __&rArr;__ falsy lhs will not render rhs)      
 ```javascript
 export const App = () => {
-	const greeting = "Welcome to our cafe!";
-	const userDrink = undefined; //undefined as value is used only for representation 
+  const greeting = "Welcome to our cafe!";
+  const userDrink = undefined; //undefined as value is used only for representation 
 
-	return (
-		<div className="App">
-			<h1>{greeting}</h1>
-			<DrinkSearch availableDrinks={availableDrinks} />
-			{userDrink && (<DrinkChoice drink={userDrink} />)} // if lhs is truthy the component inside `()` will render
-		</div>
-	);
+  return (
+    <div className="App">
+      <h1>{greeting}</h1>
+      <DrinkSearch availableDrinks={availableDrinks} />
+      {userDrink && (<DrinkChoice drink={userDrink} />)} // if lhs is truthy the component inside `()` will render
+    </div>
+  );
 };
 ```
 
 ##### In JSX we can use the ternary operator to replace the if else statement.    
 ```javascript
 export const App = () => {
-	const greeting = "Welcome to our cafe!";
-	const userDrink = undefined; // undefined as value is used only for representation 
+  const greeting = "Welcome to our cafe!";
+  const userDrink = undefined; // undefined as value is used only for representation 
 
-	return (
-		<div className="App">
-			<h1>{greeting}</h1>
-			<DrinkSearch availableDrinks={availableDrinks} />
-			{userDrink ? (<DrinkChoice drink={userDrink} />) : "Please select a drink"}
-		</div>
-	);
+  return (
+    <div className="App">
+      <h1>{greeting}</h1>
+      <DrinkSearch availableDrinks={availableDrinks} />
+      {userDrink ? (<DrinkChoice drink={userDrink} />) : "Please select a drink"}
+    </div>
+  );
 };
 ```
-##### We can also use the ternary operator to dynamically switch between CSS classnames.		
+##### We can also use the ternary operator to dynamically switch between CSS classnames.    
 ```javascript
 export const App = () => {
-	const greeting = "Welcome to our cafe!";
-	const userDrink = undefined; // undefined as value is used only for representation 
+  const greeting = "Welcome to our cafe!";
+  const userDrink = undefined; // undefined as value is used only for representation 
 
-	return (
-		<div className="App">
-			<h1 className={userDrink ? "small-header" : "big-header"}>{greeting}</h1> // makes the header small if user have selected a drink
-			<DrinkSearch availableDrinks={availableDrinks} />
-			{userDrink ? (<DrinkChoice drink={userDrink} />) : "Please select a drink"}
-		</div>
-	);
+  return (
+    <div className="App">
+      <h1 className={userDrink ? "small-header" : "big-header"}>{greeting}</h1> // makes the header small if user have selected a drink
+      <DrinkSearch availableDrinks={availableDrinks} />
+      {userDrink ? (<DrinkChoice drink={userDrink} />) : "Please select a drink"}
+    </div>
+  );
 };
 ```
 
 #### Conditional return of JSX
-##### We can use an `if else` statement outside of the JSX code i.e. in a function	
+##### We can use an `if else` statement outside of the JSX code i.e. in a function  
 ```javascript
 export const App = () => {
-	const greeting = "Welcome to our cafe!";
-	const userDrink = undefined; // undefined as value is used only for representation 
+  const greeting = "Welcome to our cafe!";
+  const userDrink = undefined; // undefined as value is used only for representation 
 
-	const userChoice = (drink) => { // this function returns either a component or a string
-		if (drink) {
-			return <DrinkChoice drink={drink}/>;
-		} else {
-				return "Please select a drink";
-		}
-	}
+  const userChoice = (drink) => { // this function returns either a component or a string
+    if (drink) {
+      return <DrinkChoice drink={drink}/>;
+    } else {
+        return "Please select a drink";
+    }
+  }
 
-	return (
-		<div className="App">
-			<h1 >{greeting}</h1>
-			<DrinkSearch availableDrinks={availableDrinks} />
-			{userChoice(userDrink)} // we can use the function inside the JSX
-		</div>
-	);
+  return (
+    <div className="App">
+      <h1 >{greeting}</h1>
+      <DrinkSearch availableDrinks={availableDrinks} />
+      {userChoice(userDrink)} // we can use the function inside the JSX
+    </div>
+  );
 };
 ```
 ##### We can create a component out of the above function
 ```javascript
 // UserChoice component
 const UserChoice = (drink) => {
-	if (drink) {
-		return <DrinkChoice drink={drink}/>;
-	} else {
-			return "Please select a drink";
-	}
+  if (drink) {
+    return <DrinkChoice drink={drink}/>;
+  } else {
+      return "Please select a drink";
+  }
 };
 
 export const App = () => {
-	const greeting = "Welcome to our cafe!";
-	const userDrink = undefined; // undefined as value is used only for representation 
+  const greeting = "Welcome to our cafe!";
+  const userDrink = undefined; // undefined as value is used only for representation 
 
-	return (
-		<div className="App">
-			<h1 >{greeting}</h1>
-			<DrinkSearch availableDrinks={availableDrinks} />
-			<UserChoice drink={userDrink} /> // 
-		</div>
-	);
+  return (
+    <div className="App">
+      <h1 >{greeting}</h1>
+      <DrinkSearch availableDrinks={availableDrinks} />
+      <UserChoice drink={userDrink} /> // 
+    </div>
+  );
 };
 ```
 
@@ -1024,9 +1024,9 @@ To be able to work with states, we need to import the React hook: __`useState`__
 import { useState } from 'react';
 
 export const DrinkButtons = () => {
-	const [selectedDrink, serSelectedDrink] = useState('Tea'); // selectedDrink is a state var with an init val of 'Tea'
-				// setSelectedDrink is a function to change the value of the state: selectedDrink
-	return (<p>Your choice: {selectDrink}</p>); // here we use the state variable to be displayed
+  const [selectedDrink, serSelectedDrink] = useState('Tea'); // selectedDrink is a state var with an init val of 'Tea'
+        // setSelectedDrink is a function to change the value of the state: selectedDrink
+  return (<p>Your choice: {selectDrink}</p>); // here we use the state variable to be displayed
 };
 ```
 
@@ -1043,18 +1043,18 @@ import { useState } from 'react';
 
 // Stateful parent component
 export const FruitSelection = () => {
-	const [fruit, setFruits] = useState('Apple');
+  const [fruit, setFruits] = useState('Apple');
 
-	return (
-		<>
-			{fruit && <ShoppingCart content = {fruit} />}
-		</>
-	);
+  return (
+    <>
+      {fruit && <ShoppingCart content = {fruit} />}
+    </>
+  );
 };
 
 // Stateless child component
 export const ShoppingCart = ({fruit}) => {
-	return (<p>Shopping cart: {fruit}</p>);
+  return (<p>Shopping cart: {fruit}</p>);
 };
 ```
 
@@ -1066,32 +1066,32 @@ export const ShoppingCart = ({fruit}) => {
 import { useState } from 'react';
 
 export const GameScore = () => {
-	const [homeTeamScore, setHomeTeamScore] = useState(0);
-	const [visitorTeamScore, setVisitorTeamScore] = useState(0);
+  const [homeTeamScore, setHomeTeamScore] = useState(0);
+  const [visitorTeamScore, setVisitorTeamScore] = useState(0);
 
-	return (
-		<>
-			<p>Home: {homeTeamScore}</p>
-			<p>Visitor: {visitorTeamScore}</p>
-		</>
-	);
+  return (
+    <>
+      <p>Home: {homeTeamScore}</p>
+      <p>Visitor: {visitorTeamScore}</p>
+    </>
+  );
 };
 ```
 
 #### Using Conditionals to Handle Empty States
 it is common practice to pass state as prop from one component to another   
-> :warning: state might not be the object that the component expects __&rArr;__ TypeError. I.e.: you pass an empty state and data is expected. This could also happen when component gets rendered before receiving the data    
+> :warning: state might not be the object that the component expects __&rArr;__ TypeError. I.e.: you pass an empty state and data is expected. This could also happen when a component gets rendered before receiving the data    
 
 A __conditional statement__ can be a solution to this (se code snippets of stateful/stateless components as an exemple to this as well)
 Another way to handle potential empty states is using __optional chaining__ . (used with object wich might or might not have a certain key that weare trying to access. __&rArr;__ instead of throwing an error it will return an 'undefined' and the app will not stop working.   
 Example for conditional chaining:    
 ```javascript
 export const DrinkChoice = ({ drink }) => {
-	return (
-		<>
-			<p>{drink?.name}</p>
-		</>
-	);
+  return (
+    <>
+      <p>{drink?.name}</p>
+    </>
+  );
 };
 ```
  
