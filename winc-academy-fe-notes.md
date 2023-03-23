@@ -1148,8 +1148,60 @@ export const App = () => {
 The `<App/>` is now stateful and passes its state to their stateless children components: `<DrinkButtons/>` and `<DrinkChoice/>`.   
 
 #### Colocating State
+It is technically the opposit of "lifting state up". It happens that the state was implemented in a component higher in the hierarchy, than the only component where the staty is actually used &rArr; it makes sence to move the state in the component where it is used.   
+- helps with readability
+- improves performance
+I.e.:
+```javascript
+import {useState} from 'react';
 
+export const ClassRoom =  ({classTitle}) => {
+  const [topic, setTopic] = useState('React: state colocation'); // state implemented in 'ClassRoom' but used in 'Topic'
 
+  return (
+    <>
+      <p>Welcome to the class, {classTitle}</p>
+      {topic && <Topic topic={topic} setTopic={setTopic} />} // we pass topic and setTopic to <Topic/> as props
+    </>
+  );
+};
+
+export const Topic = ({topic, setTopic}) => { // we pass topic and setTopic to <Topic/> as props
+  return (
+    <>
+      <label>Change topic:</label>
+      <input type="text" onChange={() => setTopic(event.target.value)} /> // this will be explained in a later topic
+      <p>Today's topic: {topic}</p>
+    </>
+  );
+};
+
+// in the code above we only use 'topic' state var. and 'setTopic' in the  <Topic/> component &rArr; move it to <Topic/> if this is the only place where we will use it 
+
+/////////////////////////////////////////////////////////////////////////////
+import {useState} from 'react';
+
+export const ClassRoom =  ({classTitle}) => {
+
+  return (
+    <>
+      <p>Welcome to the class, {classTitle}</p>
+      <Topic />
+    </>
+  );
+};
+
+export const Topic = () => { 
+  const [topic, setTopic] = useState('React: state colocation'); // state only used with 'Topic' better to implement it here
+
+  return (
+    <>
+      <label>Change topic:</label>
+      <input type="text" onChange={() => setTopic(event.target.value)} /> 
+      {topic && <h2>Today's topic: {topic}<h2/>} 
+    </>
+  );
+};
 
 
 
