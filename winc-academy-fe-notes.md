@@ -1204,8 +1204,8 @@ export const Topic = () => {
 };
 ```
 
-### 07. React Developer Tools in Chrome (install plugin in chrom &rArr; insepect element &rArr; Components or Profiler)
-- plugin icon is blue in case of a production react   
+### 07. React Developer Tools in Chrome (install plugin in chrome &rArr; inspect element(s) &rArr; Components or Profiler)
+- plugin icon is blue in case of a production react app  
 - the icon is red in case of an app in developement    
 - inspecting an element &rArr; we can look at components and prop values etc. and also change them in the browser to see the effect     
 
