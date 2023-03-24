@@ -1148,7 +1148,7 @@ export const App = () => {
 The `<App/>` is now stateful and passes its state to their stateless children components: `<DrinkButtons/>` and `<DrinkChoice/>`.   
 
 #### Colocating State
-It is technically the opposit of "lifting state up". It happens that the state was implemented in a component higher in the hierarchy, than the only component where the staty is actually used &rArr; it makes sence to move the state in the component where it is used.   
+It is technically the opposit of "lifting state up". It happens that the state was implemented in a component higher in the hierarchy, than the only component where the state is actually used &rArr; it makes sence to move the state in the component where it is used.   
 - helps with readability
 - improves performance
 I.e.:
@@ -1176,7 +1176,7 @@ export const Topic = ({topic, setTopic}) => { // we pass topic and setTopic to <
   );
 };
 
-// in the code above we only use 'topic' state var. and 'setTopic' in the  <Topic/> component &rArr; move it to <Topic/> if this is the only place where we will use it 
+// in the code above we only use 'topic' state var. and 'setTopic' in the  <Topic/> component >> move it to <Topic/> if this is the only place where we will use it 
 
 /////////////////////////////////////////////////////////////////////////////
 import {useState} from 'react';
@@ -1202,6 +1202,14 @@ export const Topic = () => {
     </>
   );
 };
+```
+
+### 07. React Developer Tools in Chrome (install plugin in chrom &rArr; insepect element &rArr; Components or Profiler)
+- plugin icon is blue in case of a production react   
+- the icon is red in case of an app in developement    
+- inspecting an element &rArr; we can look at components and prop values etc. and also change them in the browser to see the effect     
+
+### 08. Lists, Loops and Keys
 
 
 
