@@ -1241,8 +1241,41 @@ export const GroceryList = () => {
     <ul>{groceries.map((item) => (<li>{item}</li>))}</ul>
   );
 };
+
+// Output:
+// <ul>
+//   <li>Apple</li>
+//   <li>Pear</li>
+//   <li>Orange</li>
+// </ul>
 ```
 
+#### Keys
+- keys are unique strings or numbers that identify an array item among the other array items
+- keys help React to match array items with their corresponding components
+This is useful in complex code, i.e.: in case we have to/want to re-order items like the sorting feature in searches.
+Without indices react will not know what to update in the DOM.
 
+##### Best Practices for Using Keys
+- use keys that are included in the data i.e.: use the ID as key when we get the data from the back-end server
+- if the app used locally and the data is generated locally &rArr; we can use the __randomUUID__ method of the Crypto interface
+  :warning: do not use this directly when rendering lists
+
+Code example to include keys:   
+```javascript
+export const GroceryList = () => {
+  return (
+    <ul>
+      {groceries.map((item) => (<li key={item.id}>{item}</li>))}
+    </ul>
+  );
+};
+```
+> :exclamation: "key" is not a prop, to use the ID in a component as a prop we have to pass it separately
+
+:bangbang: REMEMBER 
+- keep the keys the same (no randomUUID for list because they change at each render - only good for initial dataset)
+- keys must be unique (all items in the same array must be unique - similar keys in different arrays are ok)
+- don't generate keys while rendering (React might not be able to match keys between renderings &rArr; lost user input, wrong item gets rendered, slow down do to all components being re-rendered not just those which where changed)  
 
 
