@@ -1205,12 +1205,43 @@ export const Topic = () => {
 ```
 
 ### 07. React Developer Tools in Chrome (install plugin in chrome &rArr; inspect element(s) &rArr; Components or Profiler)
-- plugin icon is blue in case of a production react app  
+- plugin icon is blue in case of a production react   
 - the icon is red in case of an app in developement    
 - inspecting an element &rArr; we can look at components and prop values etc. and also change them in the browser to see the effect     
 
 ### 08. Lists, Loops and Keys
+Usecase example: to render multiple search results as a list (multiple items of the same component type)
+We can use __array methods__ for this purpose.
 
+#### Array.map()
+to loop over an array and render a component for each item. I.e.:   
+```javascript
+// create a groceries list from the array
+const groceries = ["Apple", "Orange", "Pear"];
+
+// option-1: use .map() to create a list of JSX nodes >> rendered by returning from the component.
+export const GroceryList = () => {
+  const groceryItems = groceries.map((item) => (<li>{item}</li>));
+  return (
+    <ul>{groceryItems}</ul>
+  );
+};
+
+// option-2: render a component and pass the array items as props
+export const GroceryList = () => {
+  const groceryItems = groceries.map((item) => (<GroceryItem item={item}/>));
+  return (
+    <ul>{groceryItems}</ul>
+  );
+};
+
+// option-3: we can return the list items directly without assigning it to a variable
+export const GroceryList = () => {
+  return (
+    <ul>{groceries.map((item) => (<li>{item}</li>))}</ul>
+  );
+};
+```
 
 
 
