@@ -1274,8 +1274,33 @@ export const GroceryList = () => {
 > :exclamation: "key" is not a prop, to use the ID in a component as a prop we have to pass it separately
 
 :bangbang: REMEMBER 
-- keep the keys the same (no randomUUID for list because they change at each render - only good for initial dataset)
+- keep the keys the same (no randomUUID for list items because they change at each render - only good for initial dataset)
 - keys must be unique (all items in the same array must be unique - similar keys in different arrays are ok)
 - don't generate keys while rendering (React might not be able to match keys between renderings &rArr; lost user input, wrong item gets rendered, slow down due to all components being re-rendered not just those which where changed)  
 
+### 09. Handling Events
+#### Handling Clicks
+- we can use the __onClick__ attribute on any element
+- inside the attribute we define a callback function &rArr; triggered on click
+```javascript
+import { useState } from 'react';
+
+export const DrinkButtons = () => {
+  const [drinkSelected, setDrinkSelected] = useState(false);
+
+  const clickHandler = () => {
+    setDrinkSelected(true);
+  }
+
+  return (
+    <>
+      <div className="Button-group">
+        <button className="Button" onClick={clickHandler}>
+          Tea
+        </button>
+      </div>
+    </>
+  );
+};
+```
 
