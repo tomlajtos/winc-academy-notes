@@ -1304,3 +1304,14 @@ export const DrinkButtons = () => {
 };
 ```
 
+#### Calling an Inline Function and setState Directly
+we can define an anonyme function in place if we only want to change the state within the event handler function   
+```javascript
+//the code before this is the same as the example above(Handling Clicks)
+//execpt for that 'clickHandler' function is not defined
+        <button className="Button" onClick={() => setDrinkSelected(true)}>
+          Tea
+        </button>
+//the code after this is the same as the example above
+```
+
