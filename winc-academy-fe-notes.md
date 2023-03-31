@@ -709,7 +709,7 @@ etc.
 1. `pnpm create vite@latest my-first-app --template react`
 2. `cd my-first-app` >> `npm install` => installs dependencies
 3. edit Vite config 
-4. `pnpm rund dev` => runs the app via __Vite__-server
+4. `pnpm run dev` => runs the app via __Vite__-server
 5. `pnpm eslint --init` => set up Eslint
 6. edit `eslintrc` >> 
 
@@ -1271,7 +1271,7 @@ export const GroceryList = () => {
   );
 };
 ```
-> :exclamation: "key" is not a prop, to use the ID in a component as a prop we have to pass it separately
+> :exclamation: `key` is not a prop, to use the ID in a component as a prop we have to pass it separately
 
 :bangbang: REMEMBER 
 - keep the keys the same (no randomUUID for list items because they change at each render - only good for initial dataset)
@@ -1305,7 +1305,7 @@ export const DrinkButtons = () => {
 ```
 
 #### Calling an Inline Function and setState Directly
-we can define an anonyme function in place if we only want to change the state within the event handler function   
+we can define an anonymous function in place if we only want to change the state within the event handler function   
 ```javascript
 //the code before this is the same as the example above(Handling Clicks)
 //execpt for that 'clickHandler' function is not defined
@@ -1315,3 +1315,27 @@ we can define an anonyme function in place if we only want to change the state w
 //the code after this is the same as the example above
 ```
 
+#### Handling Text Input
+- we can use the __onChange__ atrribute for text input fields   
+  (works for any input form fields i.e. text , radio b., checkbox, dropdown etc.)
+- as with `onClick` we pass or define a callback function to handle the event change 
+- we can also use the __onKeyDown__ attribute, which is triggered on key press
+```javascript
+import { useState } from 'react';
+
+export const GreetHeader = () => {
+  const [name, setName] = useState(
+    'Kumiko!'
+  );
+
+  const handleChange = (event) => setName(event.target.value); //retrieves the input value (event.target.value) and sets it as stae
+
+  return (
+    <div>
+      <h1>Hello {name}!</h1>
+      <input type="text" value={name} onKeyDown={handleChange} />
+    </div>
+  );
+};
+```    
+ 
